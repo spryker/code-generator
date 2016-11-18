@@ -9,6 +9,7 @@ namespace Spryker\Zed\CodeGenerator\Business\Generator\Yves\Template;
 
 use Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\AbstractYvesCodeGenerator;
+use Zend\Filter\Word\CamelCaseToDash;
 
 class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
 {
@@ -52,7 +53,9 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
      */
     public function getController()
     {
-        return $this->CamelCaseToDashedCase($this->controller);
+        $controller = $this->getCamelCaseToDashedFilter()->filter($this->controller);
+
+        return strtolower($controller);
     }
 
     /**
@@ -64,16 +67,13 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
     }
 
     /**
-     * @todo is it called dashed case?
-     *
-     * @param string $string
-     *
-     * @return string
+     * @return \Zend\Filter\FilterInterface
      */
-    protected function CamelCaseToDashedCase($string)
+    protected function getCamelCaseToDashedFilter()
     {
-        //@todo add actual dashed logic
-        return strtolower($string);
+        $filter = new CamelCaseToDash();
+
+        return $filter;
     }
 
     /**

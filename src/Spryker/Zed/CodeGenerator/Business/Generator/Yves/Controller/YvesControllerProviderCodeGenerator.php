@@ -8,10 +8,8 @@
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller;
 
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\AbstractYvesControllerCodeGenerator;
+use Zend\Filter\Word\CamelCaseToDash;
 
-/**
- * @todo this smells like project level, so move up
- */
 class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGenerator
 {
 
@@ -70,7 +68,20 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
      */
     protected function getBundleDashed()
     {
-        return 'hello-world-now';
+        $bundle = $this->getBundle();
+        $bundle = $this->getCamelCaseToDashedFilter()->filter($bundle);
+
+        return strtolower($bundle);
+    }
+
+    /**
+     * @return \Zend\Filter\FilterInterface
+     */
+    protected function getCamelCaseToDashedFilter()
+    {
+        $filter = new CamelCaseToDash();
+
+        return $filter;
     }
 
 }

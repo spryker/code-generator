@@ -9,9 +9,6 @@ namespace Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller;
 
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\AbstractYvesControllerCodeGenerator;
 
-/**
- * @todo this smells like project level, so move up
- */
 class YvesControllerCodeGenerator extends AbstractYvesControllerCodeGenerator
 {
 
