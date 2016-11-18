@@ -84,7 +84,7 @@ class CommunicationFactoryCodeGenerator extends AbstractZedCodeGenerator
     protected function getQueryContainerFqcn()
     {
         return sprintf(
-            '\%s\%sQueryContainer',
+            '\%s\Persistence\%sQueryContainer',
             parent::getNamespace(),
             $this->getBundle()
         );

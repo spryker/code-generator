@@ -14,7 +14,7 @@
   "require-dev": {
     "spryker/code-sniffer": "*"
   },
-  "description": "Code generator bundle",
+  "description": "CodeGenerator bundle",
   "license": "MIT",
   "minimum-stability": "dev",
   "prefer-stable": true,
