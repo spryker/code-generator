@@ -1,0 +1,21 @@
+<?php
+
+namespace {{ namespace }};
+
+use Spryker\Client\Kernel\AbstractClient;
+
+/**
+ * @method \{{ namespace }}\{{ bundle }}Factory getFactory()
+ */
+class {{ classname }} extends AbstractClient implements {{ classname }}Interface
+{
+
+    /**
+     * @return \{{ namespace }}\Zed\{{ bundle }}StubInterface
+     */
+    protected function getZedStub()
+    {
+        return $this->getFactory()->createZedStub();
+    }
+
+}

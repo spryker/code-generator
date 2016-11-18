@@ -1,0 +1,24 @@
+<?php
+
+namespace {{ namespace }};
+
+use Spryker\Yves\Application\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+
+/**
+ * @method \Pyz\Yves\Checkout\CheckoutFactory getFactory()
+ */
+class {{ classname }} extends AbstractController
+{
+
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     *
+     * @return array|\Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function indexAction(Request $request)
+    {
+        return [];
+    }
+
+}

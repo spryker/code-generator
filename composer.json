@@ -1,0 +1,30 @@
+{
+  "name": "spryker/code-generator",
+  "autoload": {
+    "psr-0": {
+      "Spryker": "src/",
+      "Acceptance": "tests/",
+      "Functional": "tests/",
+      "Integration": "tests/",
+      "Unit": "tests/"
+    }
+  },
+  "require": {
+    "spryker/twig": "*"
+  },
+  "require-dev": {
+    "spryker/code-sniffer": "*"
+  },
+  "description": "Code generator bundle",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

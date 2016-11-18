@@ -1,0 +1,19 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ namespace }}\Zed\{{ bundle }}Stub;
+use Spryker\Client\Kernel\AbstractFactory;
+
+class {{ classname }} extends AbstractFactory
+{
+
+    /**
+     * @return \{{ namespace }}\Zed\{{ bundle }}StubInterface
+     */
+    public function createZedStub()
+    {
+        return new {{ bundle }}Stub($this->getZedRequestClient());
+    }
+
+}

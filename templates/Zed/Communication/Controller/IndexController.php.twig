@@ -1,0 +1,25 @@
+<?php
+
+namespace {{ namespace }};
+
+use Spryker\Zed\Application\Communication\Controller\AbstractController;
+
+/**
+ * @method {{ facadeFqcn }} getFacade()
+ * @method {{ communicationFactoryFqcn }} getFactory()
+ * @method {{ queryContainerFqcn }} getQueryContainer()
+ */
+class IndexController extends AbstractController
+{
+
+    /**
+     * @return array
+     */
+    public function indexAction()
+    {
+        return $this->viewResponse([
+            'test' => 'Greetings!',
+        ]);
+    }
+
+}

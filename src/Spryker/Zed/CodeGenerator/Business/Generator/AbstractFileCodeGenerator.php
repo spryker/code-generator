@@ -1,0 +1,173 @@
+<?php
+
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
+namespace Spryker\Zed\CodeGenerator\Business\Generator;
+
+use Generated\Shared\Transfer\CodeGeneratorResultTransfer;
+use Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface;
+
+abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
+{
+
+    const FILE_PERMISSIONS = 0777;
+
+    /**
+     * @var \Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface
+     */
+    protected $generatorEngine;
+
+    /**
+     * @param string $bundle
+     * @param \Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface $generatorEngine
+     * @param \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[] $requiredGenerators
+     */
+    public function __construct($bundle, GeneratorEngineInterface $generatorEngine, array $requiredGenerators = [])
+    {
+        parent::__construct($bundle, $requiredGenerators);
+
+        $this->generatorEngine = $generatorEngine;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getAbsolutePathToBundle()
+    {
+        return $this->joinPath([
+            APPLICATION_ROOT_DIR,
+            $this->getPathToBundle(),
+        ]);
+    }
+
+    /**
+     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer
+     */
+    public function doGenerate()
+    {
+        $targetFile = $this->getTargetFile();
+        $absoluteTargteFile = $this->getAbsolutePathToTargetFile();
+
+        $codeGeneratorResultTransfer = new CodeGeneratorResultTransfer();
+        $codeGeneratorResultTransfer->setFilename($targetFile);
+
+        if (file_exists($absoluteTargteFile)) {
+            return $codeGeneratorResultTransfer
+                ->setResult(CodeGeneratorInterface::RESULT_ALREADY_EXISTS);
+        }
+
+        $this->ensureDirectoryIsPresent($absoluteTargteFile);
+
+        $content = $this->generatorEngine->generate(
+            $this->getSourceFile(),
+            $this->getVars()
+        );
+
+        $result = file_put_contents($absoluteTargteFile, $content);
+
+        if ($result === false) {
+            return $codeGeneratorResultTransfer
+                ->setResult(CodeGeneratorInterface::RESULT_ERROR);
+        }
+
+        return $codeGeneratorResultTransfer
+            ->setResult(CodeGeneratorInterface::RESULT_SUCCESS);
+    }
+
+    /**
+     * @return array
+     */
+    protected function getVars()
+    {
+        return [
+            self::KEY_BUNDLE => $this->getBundle(),
+        ];
+    }
+
+    /**
+     * @param string $file
+     *
+     * @return bool
+     */
+    protected function ensureDirectoryIsPresent($file)
+    {
+        $directory = dirname($file);
+
+        //@todo might want to check for regular file?
+        if (!file_exists($directory)) {
+            return $this->createDirectory($directory);
+        }
+
+        return true;
+    }
+
+    /**
+     * @param string $directory
+     *
+     * @return bool
+     */
+    protected function createDirectory($directory)
+    {
+        return mkdir(
+            $directory,
+            self::FILE_PERMISSIONS,
+            true
+        );
+    }
+
+    /**
+     * @param array $fragments
+     *
+     * @return string
+     */
+    protected function joinPath(array $fragments)
+    {
+        return implode(
+            DIRECTORY_SEPARATOR,
+            $fragments
+        );
+    }
+
+    /**
+     * @return string
+     */
+    protected function getAbsolutePathToTargetFile()
+    {
+        return $this->joinPath([
+            $this->getAbsolutePathToBundle(),
+            $this->getTargetFile(),
+        ]);
+    }
+
+    /**
+     * @return \Generated\Shared\Transfer\CodeGeneratorInteractionTransfer[]
+     */
+    public function getRequiredInteractions()
+    {
+        return [];
+    }
+
+    /**
+     * @return string
+     */
+    abstract public function getPathToBundle();
+
+    /**
+     * @return string
+     */
+    abstract public function getSourceFile();
+
+    /**
+     * @return string
+     */
+    abstract public function getTargetFile();
+
+    /**
+     * @return string
+     */
+    abstract public function getClassname();
+
+}
