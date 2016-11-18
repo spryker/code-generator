@@ -10,7 +10,6 @@
     }
   },
   "require": {
-    "spryker/twig": "*"
   },
   "require-dev": {
     "spryker/code-sniffer": "*"
