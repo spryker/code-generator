@@ -47,7 +47,7 @@ class BusinessFactoryCodeGenerator extends AbstractZedCodeGenerator
      */
     public function getVars()
     {
-        $vars =  [
+        $vars = [
             'configFqcn' => $this->getConfigFqcn(),
             'queryContainerFqcn' => $this->getQueryContainerFqcn(),
         ] + parent::getVars();

@@ -55,7 +55,7 @@ class FacadeCodeGenerator extends AbstractZedCodeGenerator
      */
     public function getVars()
     {
-        $vars =  [
+        $vars = [
             'businessFactoryFqcn' => $this->getBusinessFactoryFqcn(),
         ] + parent::getVars();
 
