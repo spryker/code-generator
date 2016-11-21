@@ -16,3 +16,5 @@
 !/tests/_output/.gitkeep
 
 vendor/*
+composer.lock
+composer.phar
