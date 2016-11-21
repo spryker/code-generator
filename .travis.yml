@@ -1,4 +1,4 @@
-.gitattributeslanguage: php
+language: php
 
 sudo: false
 
