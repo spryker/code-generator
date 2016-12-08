@@ -27,7 +27,6 @@ abstract class AbstractPhpFileCodeGenerator extends AbstractFileCodeGenerator
      */
     protected function translateNamespaceToPath($namespace)
     {
-        //@todo whats the constant for the namespace separator?
         return str_replace('\\', DIRECTORY_SEPARATOR, $namespace);
     }
 
