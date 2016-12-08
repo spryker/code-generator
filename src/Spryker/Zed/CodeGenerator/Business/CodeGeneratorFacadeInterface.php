@@ -21,4 +21,40 @@ interface CodeGeneratorFacadeInterface
      */
     public function generateZedBundle($level, $bundle, $namespace);
 
+    /**
+     * @api
+     *
+     * @param string $bundle
+     *
+     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     */
+    public function generateYvesBundle($bundle);
+
+    /**
+     * @api
+     *
+     * @param string $bundle
+     *
+     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     */
+    public function generateClientBundle($bundle);
+
+    /**
+     * @api
+     *
+     * @param string $bundle
+     *
+     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     */
+    public function generateSharedBundle($bundle);
+
+    /**
+     * @api
+     *
+     * @param string $bundle
+     *
+     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     */
+    public function generateBundle($bundle);
+
 }
