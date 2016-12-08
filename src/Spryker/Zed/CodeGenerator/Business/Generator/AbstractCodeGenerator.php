@@ -45,9 +45,6 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
         $this->requiredGenerators = [];
 
         $this->addRequiredGenerators($requiredGenerators);
-
-//        $this->interactions = new ArrayObject();
-//        $this->configureInteractions();
     }
 
     /**
