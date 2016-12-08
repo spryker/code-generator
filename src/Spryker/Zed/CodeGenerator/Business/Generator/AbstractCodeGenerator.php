@@ -59,7 +59,7 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     {
         $bundle = $this->getUnderscoreToCamelCaseFilter()->filter($bundle);
 
-        return ucfirst($bundle);
+        return $bundle;
     }
 
     /**
@@ -69,7 +69,7 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     {
         $filter = new FilterChain();
 
-        $filter->attachByName('WordUnderscoreToStudlyCase');
+        $filter->attachByName('WordUnderscoreToCamelCase');
 
         return $filter;
     }
