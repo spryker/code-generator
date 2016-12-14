@@ -3,9 +3,8 @@
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Zed\Communication;
 
 use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
-use Zend\Filter\FilterChain;
 use Zend\Filter\Word\CamelCaseToDash;
-use Zend\Filter\Word\UnderscoreToSeparator;
+use Zend\Filter\Word\CamelCaseToUnderscore;
 
 class NavigationXmlCodeGenerator extends AbstractZedCodeGenerator
 {
@@ -67,10 +66,10 @@ class NavigationXmlCodeGenerator extends AbstractZedCodeGenerator
      */
     protected function getBundleDashed()
     {
-        $bundle = $this->getBundle();
-        $bundle = $this->getCamelCaseToDashedFilter()->filter($bundle);
+        $bundle = $this->getCamelCaseToDashedFilter()->filter($this->getBundle());
+        $bundle = strtolower($bundle);
 
-        return strtolower($bundle);
+        return $bundle;
     }
 
     /**
@@ -91,19 +90,17 @@ class NavigationXmlCodeGenerator extends AbstractZedCodeGenerator
         $bundle = $this->getBundle();
 
         $bundle = $this->getUnderscoreToHumanizedFilter()->filter($bundle);
+        $bundle = str_replace('_', ' ', $bundle);
 
         return $bundle;
     }
 
     /**
-     * @return \Zend\Filter\FilterChain
+     * @return \Zend\Filter\FilterInterface
      */
     protected function getUnderscoreToHumanizedFilter()
     {
-        $filter = new FilterChain();
-
-        $filter->attachByName('WordCamelCaseToUnderscore');
-        $filter->attachByName('WordUnderscoreToSeparator');
+        $filter = new CamelCaseToUnderscore();
 
         return $filter;
     }
