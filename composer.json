@@ -1,20 +1,17 @@
 {
   "name": "spryker/code-generator",
-  "autoload": {
-    "psr-0": {
-      "Spryker": "src/",
-      "Acceptance": "tests/",
-      "Functional": "tests/",
-      "Integration": "tests/",
-      "Unit": "tests/"
-    }
-  },
+
   "require": {
     "php": ">=5.6.0",
+    "spryker/console": "*",
+    "spryker/kernel": "*",
+    "spryker/transfer": "*",
     "zendframework/zend-filter": "*"
   },
   "require-dev": {
-    "spryker/code-sniffer": "*"
+    "codeception/codeception": "*",
+    "spryker/code-sniffer": "*",
+    "spryker/testify": "*"
   },
   "description": "CodeGenerator bundle",
   "license": "MIT",
@@ -25,7 +22,26 @@
       "dev-master": "1.0.x-dev"
     }
   },
+  "autoload": {
+    "psr-0": {
+      "Spryker": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-0": {
+      "Test": "tests/"
+    },
+    "psr-4": {
+      "Transfer\\Module\\": "vendor/spryker/transfer/tests/_support/Module"
+    }
+  },
   "config": {
     "sort-packages": true
-  }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://code.spryker.com/repo/private"
+    }
+  ]
 }
