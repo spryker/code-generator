@@ -2,7 +2,6 @@
 
 namespace {{ namespace }};
 
-use Spryker\Zed\Category\CategoryDependencyProvider;
 use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
 
 /**
@@ -11,23 +10,4 @@ use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
  */
 class {{ classname }} extends AbstractCommunicationFactory
 {
-
-    /**
-     * @var string
-     */
-    protected $currentLocale;
-
-    /**
-     * @return \Generated\Shared\Transfer\LocaleTransfer
-     */
-    public function getCurrentLocale()
-    {
-        if ($this->currentLocale === null) {
-            $this->currentLocale = $this->getProvidedDependency(CategoryDependencyProvider::FACADE_LOCALE)
-                ->getCurrentLocale();
-        }
-
-        return $this->currentLocale;
-    }
-
 }
