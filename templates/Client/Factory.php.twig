@@ -16,4 +16,12 @@ class {{ classname }} extends AbstractFactory
         return new {{ bundle }}Stub($this->getZedRequestClient());
     }
 
+    /**
+     * @return \Spryker\Client\ZedRequest\ZedRequestClientInterface
+     */
+    protected function getZedRequestClient()
+    {
+        return $this->getProvidedDependency({{ bundle }}DependencyProvider::CLIENT_ZED_REQUEST);
+    }
+
 }
