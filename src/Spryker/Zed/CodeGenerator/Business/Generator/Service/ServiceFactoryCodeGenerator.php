@@ -32,7 +32,7 @@ class ServiceFactoryCodeGenerator extends AbstractServiceCodeGenerator
     public function getClassname()
     {
         return sprintf(
-            '%sFactory',
+            '%sServiceFactory',
             $this->getBundle()
         );
     }
