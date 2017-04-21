@@ -16,6 +16,10 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Client\ClientFactoryCodeGenerat
 use Spryker\Zed\CodeGenerator\Business\Generator\Client\ClientInterfaceCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Client\Zed\StubCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Client\Zed\StubInterfaceCodeGenerator;
+use Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceBundleCodeGenerator;
+use Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceCodeGenerator;
+use Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceFactoryCodeGenerator;
+use Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceInterfaceCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Shared\SharedBundleCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Shared\Transfer\TransferCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller\YvesControllerCodeGenerator;
@@ -422,6 +426,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
             $this->createZedBundleCodeGenerator($bundle),
             $this->createYvesBundleCodeGenerator($bundle),
             $this->createClientBundleCodeGenerator($bundle),
+            $this->createServiceBundleCodeGenerator($bundle),
             $this->createSharedBundleCodeGenerator($bundle),
         ];
     }
@@ -538,6 +543,19 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     /**
      * @param string $bundle
      *
+     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceBundleCodeGenerator
+     */
+    public function createServiceBundleCodeGenerator($bundle)
+    {
+        return new ServiceBundleCodeGenerator(
+            $bundle,
+            $this->getRequiredServiceBundleCodeGenerators($bundle)
+        );
+    }
+
+    /**
+     * @param string $bundle
+     *
      * @return \Spryker\Zed\CodeGenerator\Business\Generator\Shared\SharedBundleCodeGenerator
      */
     public function createSharedBundleCodeGenerator($bundle)
@@ -570,6 +588,59 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return [
             $this->createTransferCodeGenerator($bundle),
+        ];
+    }
+
+    /**
+     * @param string $bundle
+     *
+     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceCodeGenerator
+     */
+    public function createServiceCodeGenerator($bundle)
+    {
+        return new ServiceCodeGenerator(
+            $bundle,
+            $this->createTwigGeneratorEngine()
+        );
+    }
+
+    /**
+     * @param string $bundle
+     *
+     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceInterfaceCodeGenerator
+     */
+    public function createServiceInterfaceCodeGenerator($bundle)
+    {
+        return new ServiceInterfaceCodeGenerator(
+            $bundle,
+            $this->createTwigGeneratorEngine()
+        );
+    }
+
+    /**
+     * @param string $bundle
+     *
+     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceFactoryCodeGenerator
+     */
+    public function createServiceFactoryCodeGenerator($bundle)
+    {
+        return new ServiceFactoryCodeGenerator(
+            $bundle,
+            $this->createTwigGeneratorEngine()
+        );
+    }
+
+    /**
+     * @param string $bundle
+     *
+     * @return array
+     */
+    protected function getRequiredServiceBundleCodeGenerators($bundle)
+    {
+        return [
+            $this->createServiceCodeGenerator($bundle),
+            $this->createServiceInterfaceCodeGenerator($bundle),
+            $this->createServiceFactoryCodeGenerator($bundle),
         ];
     }
 
