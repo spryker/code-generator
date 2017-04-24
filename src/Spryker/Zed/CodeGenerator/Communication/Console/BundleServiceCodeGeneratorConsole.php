@@ -16,16 +16,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * @method \Spryker\Zed\CodeGenerator\Business\CodeGeneratorFacade getFacade()
  */
-class BundleCodeGeneratorConsole extends Console
+class BundleServiceCodeGeneratorConsole extends Console
 {
 
-    const COMMAND_NAME = 'code:generate:bundle:all';
-    const DESCRIPTION = 'Create a bundle (Zed, Service, Shared, Yves, and Client)';
+    const COMMAND_NAME = 'code:generate:bundle:service';
+    const DESCRIPTION = 'Generates Service for a bundle name';
 
     const ARGUMENT_BUNDLE = 'bundle';
-    const ARGUMENT_DESCRIPTION_BUNDLE = 'Name of the bundle';
-
-    const OPTION_CORE = 'core';
+    const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the bundle';
 
     /**
      * @return void
@@ -37,7 +35,7 @@ class BundleCodeGeneratorConsole extends Console
             ->addArgument(
                 self::ARGUMENT_BUNDLE,
                 InputArgument::REQUIRED,
-                self::ARGUMENT_DESCRIPTION_BUNDLE
+                self::ARGUMENT_BUNDLE_DESCRIPTION
             );
     }
 
@@ -52,7 +50,7 @@ class BundleCodeGeneratorConsole extends Console
         $bundle = $input->getArgument(self::ARGUMENT_BUNDLE);
 
         $codeGeneratorResultTransfers = $this->getFacade()
-            ->generateBundle($bundle);
+            ->generateServiceBundle($bundle);
 
         $messenger = $this->getMessenger();
 

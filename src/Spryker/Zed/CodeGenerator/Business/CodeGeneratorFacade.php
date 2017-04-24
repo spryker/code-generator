@@ -64,6 +64,20 @@ class CodeGeneratorFacade extends AbstractFacade
      *
      * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
      */
+    public function generateServiceBundle($bundle)
+    {
+        return $this->getFactory()
+            ->createServiceBundleCodeGenerator($bundle)
+            ->generate();
+    }
+
+    /**
+     * @api
+     *
+     * @param string $bundle
+     *
+     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     */
     public function generateSharedBundle($bundle)
     {
         return $this->getFactory()
