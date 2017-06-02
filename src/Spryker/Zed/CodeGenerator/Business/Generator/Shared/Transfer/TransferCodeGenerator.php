@@ -13,6 +13,8 @@ use Zend\Filter\FilterChain;
 class TransferCodeGenerator extends AbstractSharedCodeGenerator
 {
 
+    const KEY_BUNDLE_CAMEL_BACKED = 'bundleCamelBacked';
+
     /**
      * @return string
      */
@@ -51,6 +53,17 @@ class TransferCodeGenerator extends AbstractSharedCodeGenerator
             'Transfer',
             $this->getClassname(),
         ]);
+    }
+
+    /**
+     * @return array
+     */
+    protected function getVars()
+    {
+        $vars = parent::getVars();
+        $vars[static::KEY_BUNDLE_CAMEL_BACKED] = lcfirst($vars[static::KEY_BUNDLE]);
+
+        return $vars;
     }
 
     /**
