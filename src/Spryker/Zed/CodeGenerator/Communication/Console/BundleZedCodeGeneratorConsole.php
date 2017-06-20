@@ -19,11 +19,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 class BundleZedCodeGeneratorConsole extends Console
 {
 
-    const COMMAND_NAME = 'code:generate:bundle:zed';
-    const DESCRIPTION = 'Generates Zed for a bundle name';
+    const COMMAND_NAME = 'code:generate:module:zed';
+    const DESCRIPTION = 'Generates Zed application layer for a module';
 
     const ARGUMENT_BUNDLE = 'bundle';
-    const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the bundle (CamelCase)';
+    const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the module';
 
     /**
      * @return void
