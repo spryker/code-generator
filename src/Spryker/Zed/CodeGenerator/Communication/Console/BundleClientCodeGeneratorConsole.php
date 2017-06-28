@@ -19,11 +19,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 class BundleClientCodeGeneratorConsole extends Console
 {
 
-    const COMMAND_NAME = 'code:generate:bundle:client';
-    const DESCRIPTION = 'Generates Client for a bundle name';
+    const COMMAND_NAME = 'code:generate:module:client';
+    const DESCRIPTION = 'Generates Client application layer for a module';
 
-    const ARGUMENT_BUNDLE = 'bundle';
-    const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the bundle (CamelCase)';
+    const ARGUMENT_BUNDLE = 'module';
+    const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the module';
 
     /**
      * @return void

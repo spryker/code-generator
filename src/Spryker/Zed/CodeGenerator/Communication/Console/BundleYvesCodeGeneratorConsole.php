@@ -19,11 +19,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 class BundleYvesCodeGeneratorConsole extends Console
 {
 
-    const COMMAND_NAME = 'code:generate:bundle:yves';
-    const DESCRIPTION = 'Generates Yves for a bundle name';
+    const COMMAND_NAME = 'code:generate:module:yves';
+    const DESCRIPTION = 'Generates Yves application layer for a module';
 
-    const ARGUMENT_BUNDLE = 'bundle';
-    const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the bundle (CamelCase)';
+    const ARGUMENT_BUNDLE = 'module';
+    const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the module';
 
     /**
      * @return void

@@ -19,11 +19,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 class BundleCodeGeneratorConsole extends Console
 {
 
-    const COMMAND_NAME = 'code:generate:bundle:all';
-    const DESCRIPTION = 'Create a bundle (Zed, Service, Shared, Yves, and Client)';
+    const COMMAND_NAME = 'code:generate:module:all';
+    const DESCRIPTION = 'Create all application layers (Zed, Service, Shared, Yves, and Client) for a module';
 
-    const ARGUMENT_BUNDLE = 'bundle';
-    const ARGUMENT_DESCRIPTION_BUNDLE = 'Name of the bundle';
+    const ARGUMENT_BUNDLE = 'module';
+    const ARGUMENT_DESCRIPTION_BUNDLE = 'Name of the module';
 
     const OPTION_CORE = 'core';
 
