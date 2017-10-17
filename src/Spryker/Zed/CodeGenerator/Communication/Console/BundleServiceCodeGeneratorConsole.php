@@ -18,7 +18,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BundleServiceCodeGeneratorConsole extends Console
 {
-
     const COMMAND_NAME = 'code:generate:module:service';
     const DESCRIPTION = 'Generates Service application layer for a module';
 
@@ -66,5 +65,4 @@ class BundleServiceCodeGeneratorConsole extends Console
 
         return static::CODE_SUCCESS;
     }
-
 }

@@ -18,7 +18,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BundleClientCodeGeneratorConsole extends Console
 {
-
     const COMMAND_NAME = 'code:generate:module:client';
     const DESCRIPTION = 'Generates Client application layer for a module';
 
@@ -66,5 +65,4 @@ class BundleClientCodeGeneratorConsole extends Console
 
         return static::CODE_SUCCESS;
     }
-
 }

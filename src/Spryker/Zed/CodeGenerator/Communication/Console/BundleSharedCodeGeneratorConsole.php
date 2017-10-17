@@ -18,7 +18,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BundleSharedCodeGeneratorConsole extends Console
 {
-
     const COMMAND_NAME = 'code:generate:module:shared';
     const DESCRIPTION = 'Generates Shared application layer for a module';
 
@@ -66,5 +65,4 @@ class BundleSharedCodeGeneratorConsole extends Console
 
         return static::CODE_SUCCESS;
     }
-
 }

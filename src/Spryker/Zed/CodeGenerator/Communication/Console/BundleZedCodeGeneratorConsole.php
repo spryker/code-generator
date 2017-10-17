@@ -18,7 +18,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BundleZedCodeGeneratorConsole extends Console
 {
-
     const COMMAND_NAME = 'code:generate:module:zed';
     const DESCRIPTION = 'Generates Zed application layer for a module';
 
@@ -66,5 +65,4 @@ class BundleZedCodeGeneratorConsole extends Console
 
         return static::CODE_SUCCESS;
     }
-
 }

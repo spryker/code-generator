@@ -18,7 +18,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BundleCodeGeneratorConsole extends Console
 {
-
     const COMMAND_NAME = 'code:generate:module:all';
     const DESCRIPTION = 'Create all application layers (Zed, Service, Shared, Yves, and Client) for a module';
 
@@ -68,5 +67,4 @@ class BundleCodeGeneratorConsole extends Console
 
         return static::CODE_SUCCESS;
     }
-
 }
