@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Yves\AbstractYvesControllerCode
 
 class YvesControllerCodeGenerator extends AbstractYvesControllerCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -49,5 +48,4 @@ class YvesControllerCodeGenerator extends AbstractYvesControllerCodeGenerator
             parent::getNamespace()
         );
     }
-
 }

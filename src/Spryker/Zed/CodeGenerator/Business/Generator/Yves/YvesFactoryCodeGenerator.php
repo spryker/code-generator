@@ -12,7 +12,6 @@ namespace Spryker\Zed\CodeGenerator\Business\Generator\Yves;
  */
 class YvesFactoryCodeGenerator extends AbstractYvesCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -39,5 +38,4 @@ class YvesFactoryCodeGenerator extends AbstractYvesCodeGenerator
             $this->getBundle()
         );
     }
-
 }

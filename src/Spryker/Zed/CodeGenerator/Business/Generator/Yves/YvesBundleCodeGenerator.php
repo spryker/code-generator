@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\AbstractCodeGenerator;
 
 class YvesBundleCodeGenerator extends AbstractCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -19,5 +18,4 @@ class YvesBundleCodeGenerator extends AbstractCodeGenerator
     {
         return 'YvesBundleCodeGenerator';
     }
-
 }

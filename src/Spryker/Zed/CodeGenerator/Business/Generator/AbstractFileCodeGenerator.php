@@ -12,7 +12,6 @@ use Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface;
 
 abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
 {
-
     const FILE_PERMISSIONS = 0777;
 
     /**
@@ -169,5 +168,4 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
      * @return string
      */
     abstract public function getClassname();
-
 }

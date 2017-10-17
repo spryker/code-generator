@@ -12,7 +12,6 @@ namespace Spryker\Zed\CodeGenerator\Business\Generator\Zed;
  */
 class ZedConfigCodeGenerator extends AbstractZedCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -39,5 +38,4 @@ class ZedConfigCodeGenerator extends AbstractZedCodeGenerator
             $this->getBundle()
         );
     }
-
 }

@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 
 class GatewayControllerCodeGenerator extends AbstractZedCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -69,5 +68,4 @@ class GatewayControllerCodeGenerator extends AbstractZedCodeGenerator
             $this->getBundle()
         );
     }
-
 }

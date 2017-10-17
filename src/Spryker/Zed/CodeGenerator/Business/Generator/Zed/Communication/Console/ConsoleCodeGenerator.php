@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 
 class ConsoleCodeGenerator extends AbstractZedCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -72,5 +71,4 @@ class ConsoleCodeGenerator extends AbstractZedCodeGenerator
             $this->getBundle()
         );
     }
-
 }

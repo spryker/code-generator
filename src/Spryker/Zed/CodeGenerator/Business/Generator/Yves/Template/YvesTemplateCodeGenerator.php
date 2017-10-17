@@ -13,7 +13,6 @@ use Zend\Filter\Word\CamelCaseToDash;
 
 class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
 {
-
     /**
      * @var string
      */
@@ -122,5 +121,4 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
             ucfirst($this->getAction())
         );
     }
-
 }

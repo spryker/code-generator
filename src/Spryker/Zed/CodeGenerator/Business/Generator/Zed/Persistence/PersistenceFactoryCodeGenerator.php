@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 
 class PersistenceFactoryCodeGenerator extends AbstractZedCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -87,5 +86,4 @@ class PersistenceFactoryCodeGenerator extends AbstractZedCodeGenerator
             $this->getBundle()
         );
     }
-
 }

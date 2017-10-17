@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 
 class QueryContainerCodeGenerator extends AbstractZedCodeGenerator
 {
-
     /**
      * @api
      *
@@ -52,5 +51,4 @@ class QueryContainerCodeGenerator extends AbstractZedCodeGenerator
     {
         return parent::getNamespace() . '\Persistence';
     }
-
 }

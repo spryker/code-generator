@@ -14,7 +14,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
  */
 class FacadeCodeGenerator extends AbstractZedCodeGenerator
 {
-
     /**
      * @api
      *
@@ -83,5 +82,4 @@ class FacadeCodeGenerator extends AbstractZedCodeGenerator
             $this->getBundle()
         );
     }
-
 }

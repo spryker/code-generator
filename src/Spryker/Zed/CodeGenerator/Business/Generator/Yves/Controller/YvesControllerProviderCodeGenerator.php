@@ -12,7 +12,6 @@ use Zend\Filter\Word\CamelCaseToDash;
 
 class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -83,5 +82,4 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
 
         return $filter;
     }
-
 }

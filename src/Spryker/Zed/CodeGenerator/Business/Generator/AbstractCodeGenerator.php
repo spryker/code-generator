@@ -12,7 +12,6 @@ use Zend\Filter\FilterChain;
 
 abstract class AbstractCodeGenerator implements CodeGeneratorInterface
 {
-
     const KEY_BUNDLE = 'bundle';
 
     /**
@@ -161,5 +160,4 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     {
         return [];
     }
-
 }

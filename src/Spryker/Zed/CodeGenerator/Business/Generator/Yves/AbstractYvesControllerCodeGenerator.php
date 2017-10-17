@@ -12,7 +12,6 @@ use Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface;
 //@todo controller awareness might also become a trait
 abstract class AbstractYvesControllerCodeGenerator extends AbstractYvesCodeGenerator
 {
-
     /**
      * @var string
      */
@@ -46,5 +45,4 @@ abstract class AbstractYvesControllerCodeGenerator extends AbstractYvesCodeGener
     {
         return $this->controller;
     }
-
 }

@@ -9,7 +9,6 @@ namespace Spryker\Zed\CodeGenerator\Business\Engine;
 
 interface GeneratorEngineInterface
 {
-
     /**
      * @param string $source
      * @param array $vars
@@ -17,5 +16,4 @@ interface GeneratorEngineInterface
      * @return string
      */
     public function generate($source, array $vars = []);
-
 }

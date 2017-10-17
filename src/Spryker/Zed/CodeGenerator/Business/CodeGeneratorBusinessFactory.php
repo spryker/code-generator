@@ -52,7 +52,6 @@ use Twig_Loader_Filesystem;
  */
 class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
 {
-
     /**
      * @param string $bundle
      *
@@ -643,5 +642,4 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
             $this->createServiceFactoryCodeGenerator($bundle),
         ];
     }
-
 }

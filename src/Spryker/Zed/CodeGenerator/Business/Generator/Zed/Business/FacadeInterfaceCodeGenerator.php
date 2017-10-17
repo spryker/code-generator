@@ -14,7 +14,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
  */
 class FacadeInterfaceCodeGenerator extends AbstractZedCodeGenerator
 {
-
     /**
      * @api
      *
@@ -57,5 +56,4 @@ class FacadeInterfaceCodeGenerator extends AbstractZedCodeGenerator
     {
         return parent::getNamespace() . '\Business';
     }
-
 }

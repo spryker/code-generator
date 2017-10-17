@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\AbstractPhpFileCodeGenerator;
 
 abstract class AbstractServiceCodeGenerator extends AbstractPhpFileCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -30,5 +29,4 @@ abstract class AbstractServiceCodeGenerator extends AbstractPhpFileCodeGenerator
             $this->getBundle()
         );
     }
-
 }

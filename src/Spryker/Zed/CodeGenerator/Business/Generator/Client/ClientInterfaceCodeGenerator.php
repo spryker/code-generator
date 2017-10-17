@@ -9,7 +9,6 @@ namespace Spryker\Zed\CodeGenerator\Business\Generator\Client;
 
 class ClientInterfaceCodeGenerator extends AbstractClientCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -36,5 +35,4 @@ class ClientInterfaceCodeGenerator extends AbstractClientCodeGenerator
             $this->getBundle()
         );
     }
-
 }

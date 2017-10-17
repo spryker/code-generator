@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 
 class IndexIndexTemplateCodeGenerator extends AbstractZedCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -47,5 +46,4 @@ class IndexIndexTemplateCodeGenerator extends AbstractZedCodeGenerator
             'Presentation/Index/index.twig',
         ]);
     }
-
 }

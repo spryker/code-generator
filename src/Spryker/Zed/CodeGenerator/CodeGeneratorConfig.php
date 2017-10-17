@@ -11,7 +11,6 @@ use Spryker\Zed\Kernel\AbstractBundleConfig;
 
 class CodeGeneratorConfig extends AbstractBundleConfig
 {
-
     /**
      * @return string
      */
@@ -37,5 +36,4 @@ class CodeGeneratorConfig extends AbstractBundleConfig
             'vendor/spryker/code-generator/templates',
         ];
     }
-
 }

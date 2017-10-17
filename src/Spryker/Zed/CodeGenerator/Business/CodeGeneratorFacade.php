@@ -14,7 +14,6 @@ use Spryker\Zed\Kernel\Business\AbstractFacade;
  */
 class CodeGeneratorFacade extends AbstractFacade
 {
-
     /**
      * @api
      *
@@ -98,5 +97,4 @@ class CodeGeneratorFacade extends AbstractFacade
             ->createBundleCodeGenerator($bundle)
             ->generate();
     }
-
 }

@@ -9,7 +9,6 @@ namespace Spryker\Zed\CodeGenerator\Business;
 
 interface CodeGeneratorFacadeInterface
 {
-
     /**
      * @api
      *
@@ -65,5 +64,4 @@ interface CodeGeneratorFacadeInterface
      * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
      */
     public function generateBundle($bundle);
-
 }

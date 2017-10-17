@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Client\AbstractClientCodeGenera
 
 class StubInterfaceCodeGenerator extends AbstractClientCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -46,5 +45,4 @@ class StubInterfaceCodeGenerator extends AbstractClientCodeGenerator
     {
         return parent::getNamespace() . '\Zed';
     }
-
 }

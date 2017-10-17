@@ -9,7 +9,6 @@ namespace Spryker\Zed\CodeGenerator\Business\Generator;
 
 class BundleCodeGenerator extends AbstractCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -17,5 +16,4 @@ class BundleCodeGenerator extends AbstractCodeGenerator
     {
         return 'BundleCodeGenerator';
     }
-
 }

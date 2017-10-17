@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 
 class IndexControllerCodeGenerator extends AbstractZedCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -97,5 +96,4 @@ class IndexControllerCodeGenerator extends AbstractZedCodeGenerator
             $this->getBundle()
         );
     }
-
 }

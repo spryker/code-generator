@@ -9,7 +9,6 @@ namespace Spryker\Zed\CodeGenerator\Business\Generator;
 
 interface CodeGeneratorInterface
 {
-
     const RESULT_SUCCESS = 'success';
     const RESULT_ALREADY_EXISTS = 'already exists';
     const RESULT_ERROR = 'error';
@@ -33,5 +32,4 @@ interface CodeGeneratorInterface
      * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer
      */
     public function doGenerate();
-
 }

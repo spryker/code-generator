@@ -11,7 +11,6 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 
 class CommunicationFactoryCodeGenerator extends AbstractZedCodeGenerator
 {
-
     /**
      * @return string
      */
@@ -89,5 +88,4 @@ class CommunicationFactoryCodeGenerator extends AbstractZedCodeGenerator
             $this->getBundle()
         );
     }
-
 }

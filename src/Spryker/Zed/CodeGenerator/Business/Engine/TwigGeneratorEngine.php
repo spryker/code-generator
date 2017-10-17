@@ -11,7 +11,6 @@ use Twig_Environment;
 
 class TwigGeneratorEngine implements GeneratorEngineInterface
 {
-
     /**
      * @var \Twig_Environment
      */
@@ -35,5 +34,4 @@ class TwigGeneratorEngine implements GeneratorEngineInterface
     {
         return $this->twig->render($source, $vars);
     }
-
 }
