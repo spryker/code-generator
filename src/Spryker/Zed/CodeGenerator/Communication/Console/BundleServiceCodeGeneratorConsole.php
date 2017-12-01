@@ -14,7 +14,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * @method \Spryker\Zed\CodeGenerator\Business\CodeGeneratorFacade getFacade()
+ * @method \Spryker\Zed\CodeGenerator\Business\CodeGeneratorFacadeInterface getFacade()
  */
 class BundleServiceCodeGeneratorConsole extends Console
 {

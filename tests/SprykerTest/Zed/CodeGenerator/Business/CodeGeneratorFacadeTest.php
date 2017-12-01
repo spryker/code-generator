@@ -11,12 +11,15 @@ use Spryker\Zed\CodeGenerator\Business\CodeGeneratorFacade;
  * @group Zed
  * @group CodeGenerator
  * @group Business
+ * @group Facade
  * @group CodeGeneratorFacadeTest
  * Add your own group annotations below this line
  */
 class CodeGeneratorFacadeTest extends Unit
 {
-
+    /**
+     * @return void
+     */
     public function testConstructFacade()
     {
         $codeGeneratorFacade = new CodeGeneratorFacade();

@@ -1,6 +1,8 @@
 <?php
 namespace SprykerTest\Zed\CodeGenerator;
 
+use Codeception\Actor;
+
 /**
  * Inherited Methods
  * @method void wantToTest($text)
@@ -15,8 +17,8 @@ namespace SprykerTest\Zed\CodeGenerator;
  * @method \Codeception\Lib\Friend haveFriend($name, $actorClass = NULL)
  *
  * @SuppressWarnings(PHPMD)
-*/
-class CodeGeneratorBusinessTester extends \Codeception\Actor
+ */
+class CodeGeneratorBusinessTester extends Actor
 {
     use _generated\CodeGeneratorBusinessTesterActions;
 
