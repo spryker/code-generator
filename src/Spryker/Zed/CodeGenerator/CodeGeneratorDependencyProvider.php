@@ -11,11 +11,4 @@ use Spryker\Zed\Kernel\AbstractBundleDependencyProvider;
 
 class CodeGeneratorDependencyProvider extends AbstractBundleDependencyProvider
 {
-    /**
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[]
-     */
-    public function getEnabledGenerators()
-    {
-        return [];
-    }
 }
