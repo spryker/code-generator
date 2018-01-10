@@ -7,8 +7,9 @@ Generate your Spryker project code.
 
 ## Installation
 
+This is a require-dev module:
 ```
-composer require spryker/code-generator
+composer require --dev spryker/code-generator
 ```
 
 ## Documentation
