@@ -11,7 +11,6 @@
 
     <transfer name="CodeGeneratorInteraction">
         <property name="message" type="string" />
-        <property name="default" type="string" />
         <property name="answer" type="string" />
     </transfer>
 
