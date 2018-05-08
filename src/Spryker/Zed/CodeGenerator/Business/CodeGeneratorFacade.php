@@ -12,7 +12,7 @@ use Spryker\Zed\Kernel\Business\AbstractFacade;
 /**
  * @method \Spryker\Zed\CodeGenerator\Business\CodeGeneratorBusinessFactory getFactory()
  */
-class CodeGeneratorFacade extends AbstractFacade
+class CodeGeneratorFacade extends AbstractFacade implements CodeGeneratorFacadeInterface
 {
     /**
      * @api
