@@ -12,13 +12,11 @@ interface CodeGeneratorFacadeInterface
     /**
      * @api
      *
-     * @param string $level
      * @param string $bundle
-     * @param string $namespace
      *
      * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
      */
-    public function generateZedBundle($level, $bundle, $namespace);
+    public function generateZedBundle($bundle);
 
     /**
      * @api
