@@ -24,17 +24,29 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
     protected $action;
 
     /**
+     * @var string
+     */
+    protected $sourceAction;
+
+    /**
+     * @var string
+     */
+    protected $targetAction;
+
+    /**
      * @param string $bundle
      * @param \Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface $generatorEngine
      * @param string $controller
-     * @param string $action
+     * @param string $sourceAction
+     * @param string $targetAction
      * @param array $requiredGenerators
      */
     public function __construct(
         $bundle,
         GeneratorEngineInterface $generatorEngine,
         $controller,
-        $action,
+        $sourceAction,
+        $targetAction,
         array $requiredGenerators = []
     ) {
         parent::__construct(
@@ -44,7 +56,8 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
         );
 
         $this->controller = $controller;
-        $this->action = $action;
+        $this->sourceAction = $sourceAction;
+        $this->targetAction = $targetAction;
     }
 
     /**
@@ -55,14 +68,6 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
         $controller = $this->getCamelCaseToDashedFilter()->filter($this->controller);
 
         return strtolower($controller);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAction()
-    {
-        return $this->action;
     }
 
     /**
@@ -83,7 +88,7 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
         return sprintf(
             'Yves/Theme/default/%s/%s.twig.twig',
             $this->getController(),
-            $this->getAction()
+            $this->getSourceAction()
         );
     }
 
@@ -97,7 +102,7 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
             sprintf(
                 'Theme/default/%s/%s.twig',
                 $this->getController(),
-                $this->getAction()
+                $this->getTargetAction()
             ),
         ]);
     }
@@ -118,7 +123,23 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
         return sprintf(
             'Yves%s%sCodeGeneator',
             ucfirst($this->getController()),
-            ucfirst($this->getAction())
+            ucfirst($this->getTargetAction())
         );
+    }
+
+    /**
+     * @return string
+     */
+    protected function getSourceAction(): string
+    {
+        return $this->sourceAction;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getTargetAction(): string
+    {
+        return $this->targetAction;
     }
 }

@@ -43,6 +43,8 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\Presentation\IndexIndexTemp
 use Spryker\Zed\CodeGenerator\Business\Generator\Zed\ZedBundleCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Zed\ZedConfigCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Zed\ZedDependencyProviderCodeGenerator;
+use Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolver;
+use Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolverInterface;
 use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
 use Twig_Environment;
 use Twig_Loader_Filesystem;
@@ -369,7 +371,8 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
         return new YvesControllerProviderCodeGenerator(
             $bundle,
             $this->createTwigGeneratorEngine(),
-            $this->getConfig()->getDefaultYvesController()
+            $this->getConfig()->getDefaultYvesController(),
+            $this->getConfig()->getProviderNameSpace($this->createGeneratorProjectTypeResolver())
         );
     }
 
@@ -384,7 +387,8 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
             $bundle,
             $this->createTwigGeneratorEngine(),
             $this->getConfig()->getDefaultYvesController(),
-            $this->getConfig()->getDefaultYvesControllerAction()
+            $this->getConfig()->getDefaultYvesControllerSourceAction($this->createGeneratorProjectTypeResolver()),
+            $this->getConfig()->getDefaultYvesControllerTargetAction()
         );
     }
 
@@ -627,6 +631,14 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
             $bundle,
             $this->createTwigGeneratorEngine()
         );
+    }
+
+    /**
+     * @return \Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolverInterface
+     */
+    public function createGeneratorProjectTypeResolver(): GeneratorProjectTypeResolverInterface
+    {
+        return new GeneratorProjectTypeResolver($this->getConfig());
     }
 
     /**
