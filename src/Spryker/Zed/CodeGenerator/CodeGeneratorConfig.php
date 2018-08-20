@@ -25,7 +25,7 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     /**
      * @var string
      */
-    public const YVES_CONTROLLER_PROVIDER_CLASS_PATH = 'SprykerShop\Yves\ShopApplication\Plugin\Provider\AbstractYvesControllerProvider';
+    public const YVES_CONTROLLER_PROVIDER_CLASS = 'SprykerShop\Yves\ShopApplication\Plugin\Provider\AbstractYvesControllerProvider';
 
     /**
      * @return string
@@ -62,7 +62,7 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     /**
      * @return string
      */
-    public function getDemoShopProviderNameSpace(): string
+    public function getDemoShopProviderNamespace(): string
     {
         return 'Pyz\Yves\Application\Plugin\Provider\AbstractYvesControllerProvider';
     }
@@ -70,9 +70,9 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     /**
      * @return string
      */
-    public function getSuitProviderNameSpace(): string
+    public function getSuitProviderNamespace(): string
     {
-        return 'SprykerShop\Yves\ShopApplication\Plugin\Provider\AbstractYvesControllerProvider';
+        return static::YVES_CONTROLLER_PROVIDER_CLASS;
     }
 
     /**
@@ -97,10 +97,10 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     public function getProviderNameSpace(GeneratorProjectTypeResolverInterface $typeResolver): string
     {
         if ($typeResolver->isDemoShop()) {
-            return $this->getDemoShopProviderNameSpace();
+            return $this->getDemoShopProviderNamespace();
         }
 
-        return $this->getSuitProviderNameSpace();
+        return $this->getSuitProviderNamespace();
     }
 
     /**
@@ -108,7 +108,7 @@ class CodeGeneratorConfig extends AbstractBundleConfig
      */
     public function getProjectType(): string
     {
-        if (class_exists(static::YVES_CONTROLLER_PROVIDER_CLASS_PATH)) {
+        if (class_exists(static::YVES_CONTROLLER_PROVIDER_CLASS)) {
             return static::CODE_GENERATOR_TYPE_SUITE;
         }
 
