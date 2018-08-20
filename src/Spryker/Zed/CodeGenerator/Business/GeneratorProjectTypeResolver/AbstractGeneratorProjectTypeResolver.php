@@ -17,8 +17,6 @@ abstract class AbstractGeneratorProjectTypeResolver implements GeneratorProjectT
     protected $codeGeneratorConfig;
 
     /**
-     * GeneratorProjectTypeResolver constructor.
-     *
      * @param \Spryker\Zed\CodeGenerator\CodeGeneratorConfig $codeGeneratorConfig
      */
     public function __construct(CodeGeneratorConfig $codeGeneratorConfig)

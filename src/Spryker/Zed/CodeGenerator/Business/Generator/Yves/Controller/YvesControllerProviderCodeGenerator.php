@@ -19,8 +19,6 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
     protected $providerNameSpace;
 
     /**
-     * YvesControllerProviderCodeGenerator constructor.
-     *
      * @param string $bundle
      * @param \Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface $generatorEngine
      * @param string $controller
