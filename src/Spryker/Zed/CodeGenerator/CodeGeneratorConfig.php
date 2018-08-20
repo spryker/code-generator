@@ -104,7 +104,11 @@ class CodeGeneratorConfig extends AbstractBundleConfig
      */
     public function getProjectType(): string
     {
-        return $this->get(CodeGeneratorConstants::CODE_GENERATOR_PROJECT_TYPE);
+        if (\class_exists('SprykerShop\Yves\ShopApplication\Plugin\Provider\AbstractYvesControllerProvider')) {
+            return static::CODE_GENERATOR_TYPE_SUITE;
+        }
+
+        return static::CODE_GENERATOR_TYPE_DEMOSHOP;
     }
 
     /**
