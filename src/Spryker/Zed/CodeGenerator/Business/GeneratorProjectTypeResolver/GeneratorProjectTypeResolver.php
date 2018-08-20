@@ -32,6 +32,6 @@ class GeneratorProjectTypeResolver extends AbstractGeneratorProjectTypeResolver
      */
     public function isDemoShop(): bool
     {
-        return $this->getProjectType() === CodeGeneratorConfig::CODE_GENERATOR_TYPE_SHOP;
+        return $this->getProjectType() === CodeGeneratorConfig::CODE_GENERATOR_TYPE_DEMOSHOP;
     }
 }

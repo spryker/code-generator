@@ -21,7 +21,7 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     /**
      * @var string
      */
-    public const CODE_GENERATOR_TYPE_SHOP = 'CODE_GENERATOR_TYPE_SHOP';
+    public const CODE_GENERATOR_TYPE_DEMOSHOP = 'CODE_GENERATOR_TYPE_DEMOSHOP';
 
     /**
      * @return string
@@ -44,7 +44,7 @@ class CodeGeneratorConfig extends AbstractBundleConfig
      */
     public function getDemoShopDefaultYvesControllerSource(): string
     {
-        return 'index-shop';
+        return 'index-demoshop';
     }
 
     /**
