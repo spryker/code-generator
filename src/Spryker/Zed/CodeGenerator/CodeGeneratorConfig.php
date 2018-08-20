@@ -7,7 +7,6 @@
 
 namespace Spryker\Zed\CodeGenerator;
 
-use Spryker\Shared\CodeGenerator\CodeGeneratorConstants;
 use Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolverInterface;
 use Spryker\Zed\Kernel\AbstractBundleConfig;
 
@@ -22,6 +21,11 @@ class CodeGeneratorConfig extends AbstractBundleConfig
      * @var string
      */
     public const CODE_GENERATOR_TYPE_DEMOSHOP = 'CODE_GENERATOR_TYPE_DEMOSHOP';
+
+    /**
+     * @var string
+     */
+    public const YVES_CONTROLLER_PROVIDER_CLASS_PATH = 'SprykerShop\Yves\ShopApplication\Plugin\Provider\AbstractYvesControllerProvider';
 
     /**
      * @return string
@@ -104,7 +108,7 @@ class CodeGeneratorConfig extends AbstractBundleConfig
      */
     public function getProjectType(): string
     {
-        if (\class_exists('SprykerShop\Yves\ShopApplication\Plugin\Provider\AbstractYvesControllerProvider')) {
+        if (class_exists(static::YVES_CONTROLLER_PROVIDER_CLASS_PATH)) {
             return static::CODE_GENERATOR_TYPE_SUITE;
         }
 
