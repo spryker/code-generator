@@ -7,9 +7,9 @@
 
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller;
 
-use Zend\Filter\Word\CamelCaseToDash;
 use Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\AbstractYvesControllerCodeGenerator;
+use Zend\Filter\Word\CamelCaseToDash;
 
 class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGenerator
 {
@@ -33,8 +33,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
         string $controller,
         string $providerNameSpace,
         array $requiredGenerators = []
-    )
-    {
+    ) {
         parent::__construct($bundle, $generatorEngine, $controller, $requiredGenerators);
         $this->providerNameSpace = $providerNameSpace;
     }
@@ -83,7 +82,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
     public function getVars()
     {
         $vars = [
-                'bundleDashed'      => $this->getBundleDashed(),
+                'bundleDashed' => $this->getBundleDashed(),
                 'providerNameSpace' => $this->getProviderNameSpace(),
             ] + parent::getVars();
 
