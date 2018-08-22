@@ -7,11 +7,35 @@
 
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller;
 
+use Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\AbstractYvesControllerCodeGenerator;
 use Zend\Filter\Word\CamelCaseToDash;
 
 class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGenerator
 {
+    /**
+     * @var string
+     */
+    protected $providerNameSpace;
+
+    /**
+     * @param string $bundle
+     * @param \Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface $generatorEngine
+     * @param string $controller
+     * @param string $providerNameSpace
+     * @param array $requiredGenerators
+     */
+    public function __construct(
+        string $bundle,
+        GeneratorEngineInterface $generatorEngine,
+        string $controller,
+        string $providerNameSpace,
+        array $requiredGenerators = []
+    ) {
+        parent::__construct($bundle, $generatorEngine, $controller, $requiredGenerators);
+        $this->providerNameSpace = $providerNameSpace;
+    }
+
     /**
      * @return string
      */
@@ -57,6 +81,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
     {
         $vars = [
                 'bundleDashed' => $this->getBundleDashed(),
+                'providerNameSpace' => $this->getProviderNameSpace(),
             ] + parent::getVars();
 
         return $vars;
@@ -81,5 +106,13 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
         $filter = new CamelCaseToDash();
 
         return $filter;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getProviderNameSpace(): string
+    {
+        return $this->providerNameSpace;
     }
 }

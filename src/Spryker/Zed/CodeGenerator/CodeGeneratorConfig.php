@@ -7,14 +7,30 @@
 
 namespace Spryker\Zed\CodeGenerator;
 
+use Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolverInterface;
 use Spryker\Zed\Kernel\AbstractBundleConfig;
 
 class CodeGeneratorConfig extends AbstractBundleConfig
 {
     /**
+     * @var string
+     */
+    public const CODE_GENERATOR_TYPE_SUITE = 'CODE_GENERATOR_TYPE_SUITE';
+
+    /**
+     * @var string
+     */
+    public const CODE_GENERATOR_TYPE_DEMOSHOP = 'CODE_GENERATOR_TYPE_DEMOSHOP';
+
+    /**
+     * @var string
+     */
+    public const YVES_CONTROLLER_PROVIDER_CLASS = 'SprykerShop\Yves\ShopApplication\Plugin\Provider\AbstractYvesControllerProvider';
+
+    /**
      * @return string
      */
-    public function getDefaultYvesController()
+    public function getDefaultYvesController(): string
     {
         return 'Index';
     }
@@ -22,15 +38,87 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     /**
      * @return string
      */
-    public function getDefaultYvesControllerAction()
+    public function getDefaultYvesControllerTargetAction(): string
     {
         return 'index';
     }
 
     /**
+     * @return string
+     */
+    public function getDemoShopDefaultYvesControllerSource(): string
+    {
+        return 'index-demoshop';
+    }
+
+    /**
+     * @return string
+     */
+    public function getSuitDefaultYvesControllerSource(): string
+    {
+        return 'index-suite';
+    }
+
+    /**
+     * @return string
+     */
+    public function getDemoShopProviderNamespace(): string
+    {
+        return 'Pyz\Yves\Application\Plugin\Provider\AbstractYvesControllerProvider';
+    }
+
+    /**
+     * @return string
+     */
+    public function getSuitProviderNamespace(): string
+    {
+        return static::YVES_CONTROLLER_PROVIDER_CLASS;
+    }
+
+    /**
+     * @param \Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolverInterface $typeResolver
+     *
+     * @return string
+     */
+    public function getDefaultYvesControllerSourceAction(GeneratorProjectTypeResolverInterface $typeResolver): string
+    {
+        if ($typeResolver->isDemoShop()) {
+            return $this->getDemoShopDefaultYvesControllerSource();
+        }
+
+        return $this->getSuitDefaultYvesControllerSource();
+    }
+
+    /**
+     * @param \Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolverInterface $typeResolver
+     *
+     * @return string
+     */
+    public function getProviderNameSpace(GeneratorProjectTypeResolverInterface $typeResolver): string
+    {
+        if ($typeResolver->isDemoShop()) {
+            return $this->getDemoShopProviderNamespace();
+        }
+
+        return $this->getSuitProviderNamespace();
+    }
+
+    /**
+     * @return string
+     */
+    public function getProjectType(): string
+    {
+        if (class_exists(static::YVES_CONTROLLER_PROVIDER_CLASS)) {
+            return static::CODE_GENERATOR_TYPE_SUITE;
+        }
+
+        return static::CODE_GENERATOR_TYPE_DEMOSHOP;
+    }
+
+    /**
      * @return array
      */
-    public function getTemplatePaths()
+    public function getTemplatePaths(): array
     {
         return [
             'vendor/spryker/code-generator/templates',
