@@ -12,7 +12,7 @@ use Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface;
 
 abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
 {
-    const FILE_PERMISSIONS = 0777;
+    public const FILE_PERMISSIONS = 0777;
 
     /**
      * @var \Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface
