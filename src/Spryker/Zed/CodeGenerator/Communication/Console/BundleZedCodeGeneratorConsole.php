@@ -20,7 +20,7 @@ class BundleZedCodeGeneratorConsole extends Console
 {
     protected const COMMAND_NAME = 'code:generate:module:zed';
     protected const DESCRIPTION = 'Generates Zed application layer for a module';
-    
+
     protected const ARGUMENT_BUNDLE = 'module';
     protected const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the module';
 
