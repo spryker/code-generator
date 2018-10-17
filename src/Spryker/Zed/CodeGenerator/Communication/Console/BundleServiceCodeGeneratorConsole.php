@@ -18,11 +18,11 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BundleServiceCodeGeneratorConsole extends Console
 {
-    const COMMAND_NAME = 'code:generate:module:service';
-    const DESCRIPTION = 'Generates Service application layer for a module';
+    protected const COMMAND_NAME = 'code:generate:module:service';
+    protected const DESCRIPTION = 'Generates Service application layer for a module';
 
-    const ARGUMENT_BUNDLE = 'module';
-    const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the module';
+    protected const ARGUMENT_BUNDLE = 'module';
+    protected const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the module';
 
     /**
      * @return void

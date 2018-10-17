@@ -12,7 +12,7 @@ use Zend\Filter\FilterChain;
 
 abstract class AbstractCodeGenerator implements CodeGeneratorInterface
 {
-    const KEY_BUNDLE = 'bundle';
+    public const KEY_BUNDLE = 'bundle';
 
     /**
      * @var string

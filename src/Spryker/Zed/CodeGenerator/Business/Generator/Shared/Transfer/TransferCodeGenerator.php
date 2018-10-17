@@ -12,7 +12,7 @@ use Zend\Filter\FilterChain;
 
 class TransferCodeGenerator extends AbstractSharedCodeGenerator
 {
-    const KEY_BUNDLE_CAMEL_BACKED = 'bundleCamelBacked';
+    public const KEY_BUNDLE_CAMEL_BACKED = 'bundleCamelBacked';
 
     /**
      * @return string

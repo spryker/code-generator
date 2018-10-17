@@ -1,17 +1,8 @@
 {
   "name": "spryker/code-generator",
+  "type": "library",
   "description": "CodeGenerator module",
   "license": "MIT",
-  "autoload": {
-    "psr-4": {
-      "Spryker\\": "src/Spryker/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "SprykerTest\\": "tests/SprykerTest/"
-    }
-  },
   "require": {
     "php": ">=7.1",
     "spryker/kernel": "^3.0.0",
@@ -23,8 +14,22 @@
     "spryker/code-sniffer": "*",
     "spryker/testify": "*"
   },
+  "autoload": {
+    "psr-4": {
+      "Spryker\\": "src/Spryker/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SprykerTest\\": "tests/SprykerTest/"
+    }
+  },
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "scripts": {
+    "cs-check": "phpcs --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml -v src/ tests/",
+    "cs-fix": "phpcbf --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml -v src/ tests/"
+  },
   "extra": {
     "branch-alias": {
       "dev-master": "1.0.x-dev"
@@ -32,9 +37,5 @@
   },
   "config": {
     "sort-packages": true
-  },
-  "scripts": {
-    "cs-check": "phpcs --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml -v src/ tests/",
-    "cs-fix": "phpcbf --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml -v src/ tests/"
   }
 }

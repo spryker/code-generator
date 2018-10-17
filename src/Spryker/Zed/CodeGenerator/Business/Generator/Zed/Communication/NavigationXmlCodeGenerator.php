@@ -13,8 +13,8 @@ use Zend\Filter\Word\CamelCaseToUnderscore;
 
 class NavigationXmlCodeGenerator extends AbstractZedCodeGenerator
 {
-    const KEY_BUNDLE_DASHED = 'bundleDashed';
-    const KEY_BUNDLE_HUMANIZED = 'bundleHumanized';
+    public const KEY_BUNDLE_DASHED = 'bundleDashed';
+    public const KEY_BUNDLE_HUMANIZED = 'bundleHumanized';
 
     /**
      * @return string
