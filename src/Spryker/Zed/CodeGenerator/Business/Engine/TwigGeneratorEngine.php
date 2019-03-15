@@ -7,19 +7,19 @@
 
 namespace Spryker\Zed\CodeGenerator\Business\Engine;
 
-use Twig_Environment;
+use Twig\Environment;
 
 class TwigGeneratorEngine implements GeneratorEngineInterface
 {
     /**
-     * @var \Twig_Environment
+     * @var \Twig\Environment
      */
     protected $twig;
 
     /**
-     * @param \Twig_Environment $twig
+     * @param \Twig\Environment $twig
      */
-    public function __construct(Twig_Environment $twig)
+    public function __construct(Environment $twig)
     {
         $this->twig = $twig;
     }
