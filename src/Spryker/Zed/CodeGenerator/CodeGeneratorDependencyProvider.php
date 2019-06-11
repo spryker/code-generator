@@ -9,6 +9,9 @@ namespace Spryker\Zed\CodeGenerator;
 
 use Spryker\Zed\Kernel\AbstractBundleDependencyProvider;
 
+/**
+ * @method \Spryker\Zed\CodeGenerator\CodeGeneratorConfig getConfig()
+ */
 class CodeGeneratorDependencyProvider extends AbstractBundleDependencyProvider
 {
 }
