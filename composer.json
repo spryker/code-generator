@@ -12,6 +12,7 @@
   },
   "require-dev": {
     "spryker/code-sniffer": "*",
+    "phpunit/phpunit": "<8",
     "spryker/testify": "*"
   },
   "autoload": {
