@@ -12,6 +12,7 @@ use Spryker\Zed\CodeGenerator\Business\CodeGeneratorFacade;
 
 /**
  * Auto-generated group annotations
+ *
  * @group SprykerTest
  * @group Zed
  * @group CodeGenerator

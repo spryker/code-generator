@@ -12,7 +12,7 @@ use Spryker\Zed\CodeGenerator\CodeGeneratorConfig;
 class GeneratorProjectTypeResolver extends AbstractGeneratorProjectTypeResolver
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @api
      *
@@ -24,7 +24,7 @@ class GeneratorProjectTypeResolver extends AbstractGeneratorProjectTypeResolver
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @api
      *
