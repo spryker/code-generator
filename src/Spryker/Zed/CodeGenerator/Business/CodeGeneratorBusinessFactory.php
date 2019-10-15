@@ -46,8 +46,8 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\ZedDependencyProviderCodeGe
 use Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolver;
 use Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolverInterface;
 use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
-use Twig_Environment;
-use Twig_Loader_Filesystem;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 /**
  * @method \Spryker\Zed\CodeGenerator\CodeGeneratorConfig getConfig()
@@ -263,21 +263,21 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Twig_Loader_Filesystem
+     * @return \Twig\Loader\FilesystemLoader
      */
     protected function createTwigLoaderFilesystem()
     {
-        return new Twig_Loader_Filesystem(
+        return new FilesystemLoader(
             $this->getConfig()->getTemplatePaths()
         );
     }
 
     /**
-     * @return \Twig_Environment
+     * @return \Twig\Environment
      */
     protected function createTwigEnvironment()
     {
-        return new Twig_Environment(
+        return new Environment(
             $this->createTwigLoaderFilesystem()
         );
     }
