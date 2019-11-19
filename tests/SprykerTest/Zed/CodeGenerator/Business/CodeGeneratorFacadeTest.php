@@ -26,7 +26,7 @@ class CodeGeneratorFacadeTest extends Unit
     /**
      * @return void
      */
-    public function testConstructFacade()
+    public function testConstructFacade(): void
     {
         $codeGeneratorFacade = new CodeGeneratorFacade();
         $this->assertSame(CodeGeneratorFacade::class, get_class($codeGeneratorFacade));
