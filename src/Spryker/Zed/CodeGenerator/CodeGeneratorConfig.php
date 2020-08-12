@@ -28,6 +28,8 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     public const YVES_CONTROLLER_PROVIDER_CLASS = 'SprykerShop\Yves\ShopApplication\Plugin\Provider\AbstractYvesControllerProvider';
 
     /**
+     * @api
+     *
      * @return string
      */
     public function getDefaultYvesController(): string
@@ -36,6 +38,8 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     }
 
     /**
+     * @api
+     *
      * @return string
      */
     public function getDefaultYvesControllerTargetAction(): string
@@ -44,6 +48,8 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     }
 
     /**
+     * @api
+     *
      * @return string
      */
     public function getDemoShopDefaultYvesControllerSource(): string
@@ -52,6 +58,8 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     }
 
     /**
+     * @api
+     *
      * @return string
      */
     public function getSuitDefaultYvesControllerSource(): string
@@ -60,6 +68,8 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     }
 
     /**
+     * @api
+     *
      * @return string
      */
     public function getDemoShopProviderNamespace(): string
@@ -68,6 +78,8 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     }
 
     /**
+     * @api
+     *
      * @return string
      */
     public function getSuitProviderNamespace(): string
@@ -76,6 +88,8 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     }
 
     /**
+     * @api
+     *
      * @param \Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolverInterface $typeResolver
      *
      * @return string
@@ -90,6 +104,8 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     }
 
     /**
+     * @api
+     *
      * @param \Spryker\Zed\CodeGenerator\Business\GeneratorProjectTypeResolver\GeneratorProjectTypeResolverInterface $typeResolver
      *
      * @return string
@@ -104,6 +120,8 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     }
 
     /**
+     * @api
+     *
      * @return string
      */
     public function getProjectType(): string
@@ -116,6 +134,8 @@ class CodeGeneratorConfig extends AbstractBundleConfig
     }
 
     /**
+     * @api
+     *
      * @return array
      */
     public function getTemplatePaths(): array
