@@ -11,6 +11,7 @@
     "spryker/zend": "^2.0.0"
   },
   "require-dev": {
+    "codeception/module-asserts": "^1.2",
     "phpunit/phpunit": "<8",
     "spryker/code-sniffer": "*",
     "spryker/testify": "*"
