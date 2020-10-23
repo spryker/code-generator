@@ -8,7 +8,7 @@
 namespace Spryker\Zed\CodeGenerator\Business\Generator;
 
 use Generated\Shared\Transfer\CodeGeneratorResultTransfer;
-use Zend\Filter\FilterChain;
+use Laminas\Filter\FilterChain;
 
 abstract class AbstractCodeGenerator implements CodeGeneratorInterface
 {
@@ -59,7 +59,7 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     }
 
     /**
-     * @return \Zend\Filter\FilterChain
+     * @return \Laminas\Filter\FilterChain
      */
     protected function getUnderscoreToCamelCaseFilter()
     {
