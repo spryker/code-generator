@@ -9,7 +9,7 @@ namespace Spryker\Zed\CodeGenerator\Business\Generator\Yves\Template;
 
 use Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\AbstractYvesCodeGenerator;
-use Zend\Filter\Word\CamelCaseToDash;
+use Laminas\Filter\Word\CamelCaseToDash;
 
 class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
 {
@@ -71,7 +71,7 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
     }
 
     /**
-     * @return \Zend\Filter\FilterInterface
+     * @return \Laminas\Filter\FilterInterface
      */
     protected function getCamelCaseToDashedFilter()
     {

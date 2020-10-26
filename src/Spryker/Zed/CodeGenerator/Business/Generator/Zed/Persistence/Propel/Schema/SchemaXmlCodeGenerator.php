@@ -8,7 +8,7 @@
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Zed\Persistence\Propel\Schema;
 
 use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
-use Zend\Filter\FilterChain;
+use Laminas\Filter\FilterChain;
 
 class SchemaXmlCodeGenerator extends AbstractZedCodeGenerator
 {
@@ -62,7 +62,7 @@ class SchemaXmlCodeGenerator extends AbstractZedCodeGenerator
     }
 
     /**
-     * @return \Zend\Filter\FilterChain
+     * @return \Laminas\Filter\FilterChain
      */
     protected function getCamelCaseToUnderscoreFilter()
     {
