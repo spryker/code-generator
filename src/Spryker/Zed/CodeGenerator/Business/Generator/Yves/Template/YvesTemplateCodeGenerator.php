@@ -7,9 +7,9 @@
 
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Yves\Template;
 
+use Laminas\Filter\Word\CamelCaseToDash;
 use Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\AbstractYvesCodeGenerator;
-use Laminas\Filter\Word\CamelCaseToDash;
 
 class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
 {

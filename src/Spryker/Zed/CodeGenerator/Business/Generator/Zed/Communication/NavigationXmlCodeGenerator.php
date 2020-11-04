@@ -7,9 +7,9 @@
 
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Zed\Communication;
 
-use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 use Laminas\Filter\Word\CamelCaseToDash;
 use Laminas\Filter\Word\CamelCaseToUnderscore;
+use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 
 class NavigationXmlCodeGenerator extends AbstractZedCodeGenerator
 {

@@ -7,8 +7,8 @@
 
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Shared\Transfer;
 
-use Spryker\Zed\CodeGenerator\Business\Generator\Shared\AbstractSharedCodeGenerator;
 use Laminas\Filter\FilterChain;
+use Spryker\Zed\CodeGenerator\Business\Generator\Shared\AbstractSharedCodeGenerator;
 
 class TransferCodeGenerator extends AbstractSharedCodeGenerator
 {

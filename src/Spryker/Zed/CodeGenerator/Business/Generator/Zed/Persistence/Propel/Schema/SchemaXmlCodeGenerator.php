@@ -7,8 +7,8 @@
 
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Zed\Persistence\Propel\Schema;
 
-use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 use Laminas\Filter\FilterChain;
+use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 
 class SchemaXmlCodeGenerator extends AbstractZedCodeGenerator
 {
