@@ -7,9 +7,9 @@
 
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Zed\Communication;
 
+use Laminas\Filter\Word\CamelCaseToDash;
+use Laminas\Filter\Word\CamelCaseToUnderscore;
 use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
-use Zend\Filter\Word\CamelCaseToDash;
-use Zend\Filter\Word\CamelCaseToUnderscore;
 
 class NavigationXmlCodeGenerator extends AbstractZedCodeGenerator
 {
@@ -77,7 +77,7 @@ class NavigationXmlCodeGenerator extends AbstractZedCodeGenerator
     }
 
     /**
-     * @return \Zend\Filter\FilterInterface
+     * @return \Laminas\Filter\FilterInterface
      */
     protected function getCamelCaseToDashedFilter()
     {
@@ -100,7 +100,7 @@ class NavigationXmlCodeGenerator extends AbstractZedCodeGenerator
     }
 
     /**
-     * @return \Zend\Filter\FilterInterface
+     * @return \Laminas\Filter\FilterInterface
      */
     protected function getUnderscoreToHumanizedFilter()
     {

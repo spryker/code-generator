@@ -7,8 +7,8 @@
 
 namespace Spryker\Zed\CodeGenerator\Business\Generator\Shared\Transfer;
 
+use Laminas\Filter\FilterChain;
 use Spryker\Zed\CodeGenerator\Business\Generator\Shared\AbstractSharedCodeGenerator;
-use Zend\Filter\FilterChain;
 
 class TransferCodeGenerator extends AbstractSharedCodeGenerator
 {
@@ -66,7 +66,7 @@ class TransferCodeGenerator extends AbstractSharedCodeGenerator
     }
 
     /**
-     * @return \Zend\Filter\FilterChain
+     * @return \Laminas\Filter\FilterChain
      */
     protected function getCamelCaseToUnderscoreFilter()
     {
