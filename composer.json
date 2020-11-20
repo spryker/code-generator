@@ -11,6 +11,7 @@
     "spryker/twig": "^3.0.0"
   },
   "require-dev": {
+    "codeception/codeception": "^4.1",
     "spryker/code-sniffer": "*",
     "spryker/testify": "*"
   },

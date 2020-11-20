@@ -93,6 +93,3 @@ jobs:
 
       - name: Codecept run
         run: composer test
-
-      - name: CodeStyle checks
-        run: composer cs-check
