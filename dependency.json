@@ -1,0 +1,5 @@
+{
+    "include-dev": {
+        "codeception/codeception": "Codeception module containing various assertions."
+    }
+}
