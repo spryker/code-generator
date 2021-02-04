@@ -10,6 +10,9 @@ namespace Spryker\Zed\CodeGenerator\Business;
 interface CodeGeneratorFacadeInterface
 {
     /**
+     * Specification:
+     * - Create Zed bundle CodeGenerator.
+     *
      * @api
      *
      * @param string $bundle
@@ -19,6 +22,9 @@ interface CodeGeneratorFacadeInterface
     public function generateZedBundle($bundle);
 
     /**
+     * Specification:
+     * - Create Yves bundle CodeGenerator.
+     *
      * @api
      *
      * @param string $bundle
@@ -28,6 +34,9 @@ interface CodeGeneratorFacadeInterface
     public function generateYvesBundle($bundle);
 
     /**
+     * Specification:
+     * - Create Client bundle CodeGenerator.
+     *
      * @api
      *
      * @param string $bundle
@@ -37,6 +46,9 @@ interface CodeGeneratorFacadeInterface
     public function generateClientBundle($bundle);
 
     /**
+     * Specification:
+     * - Create Service bundle CodeGenerator.
+     *
      * @api
      *
      * @param string $bundle
@@ -46,6 +58,9 @@ interface CodeGeneratorFacadeInterface
     public function generateServiceBundle($bundle);
 
     /**
+     * Specification:
+     * - Create Shared bundle CodeGenerator.
+     *
      * @api
      *
      * @param string $bundle
@@ -55,6 +70,9 @@ interface CodeGeneratorFacadeInterface
     public function generateSharedBundle($bundle);
 
     /**
+     * Specification:
+     * - Create bundle CodeGenerator.
+     *
      * @api
      *
      * @param string $bundle

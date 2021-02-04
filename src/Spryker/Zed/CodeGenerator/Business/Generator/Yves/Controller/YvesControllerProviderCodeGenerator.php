@@ -41,7 +41,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
      */
     public function getSourceFile()
     {
-        return 'Yves/Plugin/Provider/ControllerProvider.php.twig';
+        return 'Yves/Plugin/Router/RouteProviderPlugin.php.twig';
     }
 
     /**
@@ -58,7 +58,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
     public function getClassname()
     {
         return sprintf(
-            '%sControllerProvider',
+            '%sRouteProviderPlugin',
             $this->getBundle()
         );
     }
@@ -69,7 +69,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
     public function getNamespace()
     {
         return sprintf(
-            '%s\Plugin\Provider',
+            '%s\Plugin\Router',
             parent::getNamespace()
         );
     }
