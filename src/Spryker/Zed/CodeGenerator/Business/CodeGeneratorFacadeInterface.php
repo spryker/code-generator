@@ -11,7 +11,7 @@ interface CodeGeneratorFacadeInterface
 {
     /**
      * Specification:
-     * - Creates Zed bundle CodeGenerator.
+     * - Generates Zed application layer for a module.
      *
      * @api
      *
@@ -23,7 +23,7 @@ interface CodeGeneratorFacadeInterface
 
     /**
      * Specification:
-     * - Creates Yves bundle CodeGenerator.
+     * - Generates Yves application layer for a module.
      *
      * @api
      *
@@ -35,7 +35,7 @@ interface CodeGeneratorFacadeInterface
 
     /**
      * Specification:
-     * - Creates Client bundle CodeGenerator.
+     * - Generates Client application layer for a module.
      *
      * @api
      *
@@ -47,7 +47,7 @@ interface CodeGeneratorFacadeInterface
 
     /**
      * Specification:
-     * - Creates Service bundle CodeGenerator.
+     * - Generates Service application layer for a module.
      *
      * @api
      *
@@ -59,7 +59,7 @@ interface CodeGeneratorFacadeInterface
 
     /**
      * Specification:
-     * - Creates Shared bundle CodeGenerator.
+     * - Generates Shared application layer for a module.
      *
      * @api
      *
@@ -71,7 +71,7 @@ interface CodeGeneratorFacadeInterface
 
     /**
      * Specification:
-     * - Creates bundle CodeGenerator.
+     * - Generates all application layers (Zed, Service, Shared, Yves, and Client) for a module.
      *
      * @api
      *
