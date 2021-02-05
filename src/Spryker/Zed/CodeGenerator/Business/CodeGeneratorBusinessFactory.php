@@ -363,6 +363,8 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
+     * @deprecated Use {@link \Spryker\Zed\CodeGenerator\Business\CodeGeneratorBusinessFactory::createYvesRouteProviderPluginCodeGenerator()} instead.
+     *
      * @param string $bundle
      *
      * @return \Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller\YvesControllerProviderCodeGenerator
@@ -382,7 +384,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
      *
      * @return \Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller\YvesControllerProviderCodeGenerator
      */
-    public function createYvesRouteProviderPluginCodeGenerator($bundle): YvesRouteProviderPluginCodeGenerator
+    public function createYvesRouteProviderPluginCodeGenerator(string $bundle): YvesRouteProviderPluginCodeGenerator
     {
         return new YvesRouteProviderPluginCodeGenerator(
             $bundle,
