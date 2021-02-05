@@ -16,6 +16,7 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Client\ClientFactoryCodeGenerat
 use Spryker\Zed\CodeGenerator\Business\Generator\Client\ClientInterfaceCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Client\Zed\StubCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Client\Zed\StubInterfaceCodeGenerator;
+use Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface;
 use Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceBundleCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceFactoryCodeGenerator;
@@ -382,9 +383,9 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     /**
      * @param string $bundle
      *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller\YvesControllerProviderCodeGenerator
+     * @return \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface
      */
-    public function createYvesRouteProviderPluginCodeGenerator(string $bundle): YvesRouteProviderPluginCodeGenerator
+    public function createYvesRouteProviderPluginCodeGenerator(string $bundle): CodeGeneratorInterface
     {
         return new YvesRouteProviderPluginCodeGenerator(
             $bundle,
