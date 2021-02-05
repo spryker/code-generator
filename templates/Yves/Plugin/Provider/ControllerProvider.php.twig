@@ -1,0 +1,23 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ providerNameSpace }};
+use Silex\Application;
+
+class {{ classname }} extends AbstractYvesControllerProvider
+{
+
+    const {{ bundle | upper }}_INDEX = '{{ bundle | lower }}{# @todo actually dashed-case #}-index';
+
+    /**
+     * @param \Silex\Application $app
+     *
+     * @return void
+     */
+    protected function defineControllers(Application $app)
+    {
+        $this->createGetController('/{{ bundleDashed }}', static::{{ bundle | upper }}_INDEX, '{{ bundle }}', 'Index', 'index');
+    }
+
+}

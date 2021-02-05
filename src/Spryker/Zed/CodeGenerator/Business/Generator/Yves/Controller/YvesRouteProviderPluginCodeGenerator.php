@@ -11,10 +11,7 @@ use Laminas\Filter\Word\CamelCaseToDash;
 use Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\AbstractYvesControllerCodeGenerator;
 
-/**
- * @deprecated Use {@link \Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller\YvesRouteProviderPluginCodeGenerator} instead.
- */
-class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGenerator
+class YvesRouteProviderPluginCodeGenerator extends AbstractYvesControllerCodeGenerator
 {
     /**
      * @var string
@@ -44,7 +41,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
      */
     public function getSourceFile()
     {
-        return 'Yves/Plugin/Provider/ControllerProvider.php.twig';
+        return 'Yves/Plugin/Router/RouteProviderPlugin.php.twig';
     }
 
     /**
@@ -52,7 +49,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
      */
     public function getCodeGeneratorName()
     {
-        return 'YvesControllerProvider';
+        return 'YvesRouteProviderPlugin';
     }
 
     /**
@@ -61,7 +58,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
     public function getClassname()
     {
         return sprintf(
-            '%sControllerProvider',
+            '%sRouteProviderPlugin',
             $this->getBundle()
         );
     }
@@ -72,7 +69,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
     public function getNamespace()
     {
         return sprintf(
-            '%s\Plugin\Provider',
+            '%s\Plugin\Router',
             parent::getNamespace()
         );
     }

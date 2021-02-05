@@ -11,8 +11,8 @@ class {{ classname }} extends AbstractRouteProviderPlugin
     public const ROUTE_NAME_{{ bundle | upper }} = '{{ bundleDashed | lower }}-index';
 
     /**
-     * Specification:
-     * - Adds Routes to the RouteCollection.
+     * {@inheritDoc}
+     * - Adds {{ bundle }} route to the RouteCollection.
      *
      * @api
      *
