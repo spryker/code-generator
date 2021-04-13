@@ -7,7 +7,6 @@ use Spryker\Yves\Router\Route\RouteCollection;
 
 class {{ classname }} extends AbstractRouteProviderPlugin
 {
-    protected const {{ bundle | upper }}_INDEX = '{{ bundleDashed | lower }}-index';
     public const ROUTE_NAME_{{ bundle | upper }} = '{{ bundleDashed | lower }}-index';
 
     /**
@@ -34,7 +33,7 @@ class {{ classname }} extends AbstractRouteProviderPlugin
      */
     protected function add{{ bundle }}Route(RouteCollection $routeCollection): RouteCollection
     {
-        $route = $this->buildRoute(static::{{ bundle | upper }}_INDEX, '{{ bundle }}', 'Index', 'indexAction');
+        $route = $this->buildRoute('/{{ bundleDashed | lower }}', '{{ bundle }}', 'Index', 'indexAction');
         $routeCollection->add(static::ROUTE_NAME_{{ bundle | upper }}, $route);
 
         return $routeCollection;
