@@ -1,0 +1,41 @@
+<?php
+
+namespace {{ namespace }};
+
+use Spryker\Yves\Router\Plugin\RouteProvider\AbstractRouteProviderPlugin;
+use Spryker\Yves\Router\Route\RouteCollection;
+
+class {{ classname }} extends AbstractRouteProviderPlugin
+{
+    public const ROUTE_NAME_{{ bundle | upper }}_INDEX = '{{ bundleDashed | lower }}-index';
+
+    /**
+     * {@inheritDoc}
+     * - Adds {{ bundle }} route to the RouteCollection.
+     *
+     * @api
+     *
+     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
+     *
+     * @return \Spryker\Yves\Router\Route\RouteCollection
+     */
+    public function addRoutes(RouteCollection $routeCollection): RouteCollection
+    {
+        $routeCollection = $this->add{{ bundle }}Route($routeCollection);
+
+        return $routeCollection;
+    }
+
+    /**
+     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
+     *
+     * @return \Spryker\Yves\Router\Route\RouteCollection
+     */
+    protected function add{{ bundle }}Route(RouteCollection $routeCollection): RouteCollection
+    {
+        $route = $this->buildRoute('/{{ bundleDashed | lower }}', '{{ bundle }}', 'Index', 'indexAction');
+        $routeCollection->add(static::ROUTE_NAME_{{ bundle | upper }}_INDEX, $route);
+
+        return $routeCollection;
+    }
+}

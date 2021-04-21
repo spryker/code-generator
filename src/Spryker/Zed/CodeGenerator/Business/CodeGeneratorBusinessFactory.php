@@ -16,6 +16,7 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Client\ClientFactoryCodeGenerat
 use Spryker\Zed\CodeGenerator\Business\Generator\Client\ClientInterfaceCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Client\Zed\StubCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Client\Zed\StubInterfaceCodeGenerator;
+use Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface;
 use Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceBundleCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Service\ServiceFactoryCodeGenerator;
@@ -24,6 +25,7 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Shared\SharedBundleCodeGenerato
 use Spryker\Zed\CodeGenerator\Business\Generator\Shared\Transfer\TransferCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller\YvesControllerCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller\YvesControllerProviderCodeGenerator;
+use Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller\YvesRouteProviderPluginCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\Template\YvesTemplateCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\YvesBundleCodeGenerator;
 use Spryker\Zed\CodeGenerator\Business\Generator\Yves\YvesFactoryCodeGenerator;
@@ -341,7 +343,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return [
             $this->createYvesIndexControllerCodeGenerator($bundle),
-            $this->createYvesIndexControllerProviderCodeGenerator($bundle),
+            $this->createYvesRouteProviderPluginCodeGenerator($bundle),
             $this->createYvesIndexIndexTemplateCodeGenerator($bundle),
             $this->createYvesFactoryCodeGenerator($bundle),
         ];
@@ -362,6 +364,8 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
+     * @deprecated Use {@link \Spryker\Zed\CodeGenerator\Business\CodeGeneratorBusinessFactory::createYvesRouteProviderPluginCodeGenerator()} instead.
+     *
      * @param string $bundle
      *
      * @return \Spryker\Zed\CodeGenerator\Business\Generator\Yves\Controller\YvesControllerProviderCodeGenerator
@@ -369,6 +373,21 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     public function createYvesIndexControllerProviderCodeGenerator($bundle)
     {
         return new YvesControllerProviderCodeGenerator(
+            $bundle,
+            $this->createTwigGeneratorEngine(),
+            $this->getConfig()->getDefaultYvesController(),
+            $this->getConfig()->getProviderNameSpace($this->createGeneratorProjectTypeResolver())
+        );
+    }
+
+    /**
+     * @param string $bundle
+     *
+     * @return \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface
+     */
+    public function createYvesRouteProviderPluginCodeGenerator(string $bundle): CodeGeneratorInterface
+    {
+        return new YvesRouteProviderPluginCodeGenerator(
             $bundle,
             $this->createTwigGeneratorEngine(),
             $this->getConfig()->getDefaultYvesController(),
