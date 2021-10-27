@@ -9,8 +9,17 @@ namespace Spryker\Zed\CodeGenerator\Business\Generator;
 
 interface GeneratorInterface
 {
+    /**
+     * @var string
+     */
     public const RESULT_SUCCESS = 'success';
+    /**
+     * @var string
+     */
     public const RESULT_ALREADY_EXISTS = 'already exists';
+    /**
+     * @var string
+     */
     public const RESULT_ERROR = 'error';
 
     /**

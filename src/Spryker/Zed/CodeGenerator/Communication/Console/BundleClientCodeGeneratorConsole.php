@@ -18,10 +18,22 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BundleClientCodeGeneratorConsole extends Console
 {
+    /**
+     * @var string
+     */
     protected const COMMAND_NAME = 'code:generate:module:client';
+    /**
+     * @var string
+     */
     protected const DESCRIPTION = 'Generates Client application layer for a module';
 
+    /**
+     * @var string
+     */
     protected const ARGUMENT_BUNDLE = 'module';
+    /**
+     * @var string
+     */
     protected const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the module';
 
     /**

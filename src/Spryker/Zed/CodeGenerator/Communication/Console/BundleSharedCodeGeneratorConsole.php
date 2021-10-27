@@ -18,10 +18,22 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BundleSharedCodeGeneratorConsole extends Console
 {
+    /**
+     * @var string
+     */
     protected const COMMAND_NAME = 'code:generate:module:shared';
+    /**
+     * @var string
+     */
     protected const DESCRIPTION = 'Generates Shared application layer for a module';
 
+    /**
+     * @var string
+     */
     protected const ARGUMENT_BUNDLE = 'module';
+    /**
+     * @var string
+     */
     protected const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the module';
 
     /**

@@ -9,7 +9,13 @@ namespace Spryker\Zed\CodeGenerator\Business\Generator;
 
 abstract class AbstractPhpFileCodeGenerator extends AbstractFileCodeGenerator
 {
+    /**
+     * @var string
+     */
     public const KEY_CLASSNAME = 'classname';
+    /**
+     * @var string
+     */
     public const KEY_NAMESPACE = 'namespace';
 
     /**

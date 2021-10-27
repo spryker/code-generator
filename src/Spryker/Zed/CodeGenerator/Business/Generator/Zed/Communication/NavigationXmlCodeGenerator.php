@@ -13,7 +13,13 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Zed\AbstractZedCodeGenerator;
 
 class NavigationXmlCodeGenerator extends AbstractZedCodeGenerator
 {
+    /**
+     * @var string
+     */
     public const KEY_BUNDLE_DASHED = 'bundleDashed';
+    /**
+     * @var string
+     */
     public const KEY_BUNDLE_HUMANIZED = 'bundleHumanized';
 
     /**

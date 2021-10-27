@@ -12,6 +12,9 @@ use Laminas\Filter\FilterChain;
 
 abstract class AbstractCodeGenerator implements CodeGeneratorInterface
 {
+    /**
+     * @var string
+     */
     public const KEY_BUNDLE = 'bundle';
 
     /**

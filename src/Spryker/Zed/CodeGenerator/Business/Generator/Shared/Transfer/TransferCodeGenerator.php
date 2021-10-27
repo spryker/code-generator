@@ -12,6 +12,9 @@ use Spryker\Zed\CodeGenerator\Business\Generator\Shared\AbstractSharedCodeGenera
 
 class TransferCodeGenerator extends AbstractSharedCodeGenerator
 {
+    /**
+     * @var string
+     */
     public const KEY_BUNDLE_CAMEL_BACKED = 'bundleCamelBacked';
 
     /**
