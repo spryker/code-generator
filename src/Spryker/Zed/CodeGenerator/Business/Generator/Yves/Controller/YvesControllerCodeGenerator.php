@@ -34,7 +34,7 @@ class YvesControllerCodeGenerator extends AbstractYvesControllerCodeGenerator
     {
         return sprintf(
             '%sController',
-            $this->getController()
+            $this->getController(),
         );
     }
 
@@ -45,7 +45,7 @@ class YvesControllerCodeGenerator extends AbstractYvesControllerCodeGenerator
     {
         return sprintf(
             '%s\Controller',
-            parent::getNamespace()
+            parent::getNamespace(),
         );
     }
 }

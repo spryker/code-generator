@@ -40,7 +40,7 @@ class QueryContainerInterfaceCodeGenerator extends AbstractZedCodeGenerator
     {
         return sprintf(
             '%sQueryContainerInterface',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 

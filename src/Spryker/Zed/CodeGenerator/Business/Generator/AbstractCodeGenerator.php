@@ -28,18 +28,18 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     protected $generatorEngine;
 
     /**
-     * @var \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[]
+     * @var array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface>
      */
     protected $requiredGenerators;
 
     /**
-     * @var \Generated\Shared\Transfer\CodeGeneratorInteractionTransfer[]
+     * @var array<\Generated\Shared\Transfer\CodeGeneratorInteractionTransfer>
      */
     protected $interactions;
 
     /**
      * @param string $bundle
-     * @param \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[] $requiredGenerators
+     * @param array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface> $requiredGenerators
      */
     public function __construct($bundle, array $requiredGenerators = [])
     {
@@ -82,7 +82,7 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     }
 
     /**
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[]
+     * @return array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface>
      */
     public function getRequiredGenerators()
     {
@@ -90,7 +90,7 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     }
 
     /**
-     * @param \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[] $requiredGenerators
+     * @param array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface> $requiredGenerators
      *
      * @return void
      */
@@ -115,7 +115,7 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     }
 
     /**
-     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
     public function generate()
     {
@@ -140,7 +140,7 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     }
 
     /**
-     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
     protected function executeRequiredGenerators()
     {
@@ -149,7 +149,7 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
         foreach ($this->getRequiredGenerators() as $requiredGenerator) {
             $codeGeneratorResultTransfers = array_merge(
                 $codeGeneratorResultTransfers,
-                [$requiredGenerator->doGenerate()]
+                [$requiredGenerator->doGenerate()],
             );
         }
 
@@ -157,7 +157,7 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     }
 
     /**
-     * @return \Generated\Shared\Transfer\CodeGeneratorInteractionTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorInteractionTransfer>
      */
     public function getRequiredInteractions()
     {

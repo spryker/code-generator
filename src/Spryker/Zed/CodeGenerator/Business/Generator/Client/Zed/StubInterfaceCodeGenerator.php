@@ -34,7 +34,7 @@ class StubInterfaceCodeGenerator extends AbstractClientCodeGenerator
     {
         return sprintf(
             '%sStubInterface',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 

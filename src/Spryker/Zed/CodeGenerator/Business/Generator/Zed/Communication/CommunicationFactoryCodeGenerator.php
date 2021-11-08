@@ -34,7 +34,7 @@ class CommunicationFactoryCodeGenerator extends AbstractZedCodeGenerator
     {
         return sprintf(
             '%sCommunicationFactory',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -71,7 +71,7 @@ class CommunicationFactoryCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\%sConfig',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -85,7 +85,7 @@ class CommunicationFactoryCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\Persistence\%sQueryContainer',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

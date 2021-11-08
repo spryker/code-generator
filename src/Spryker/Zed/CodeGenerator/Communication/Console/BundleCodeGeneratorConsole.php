@@ -22,6 +22,7 @@ class BundleCodeGeneratorConsole extends Console
      * @var string
      */
     protected const COMMAND_NAME = 'code:generate:module:all';
+
     /**
      * @var string
      */
@@ -31,6 +32,7 @@ class BundleCodeGeneratorConsole extends Console
      * @var string
      */
     protected const ARGUMENT_BUNDLE = 'module';
+
     /**
      * @var string
      */
@@ -51,7 +53,7 @@ class BundleCodeGeneratorConsole extends Console
             ->addArgument(
                 self::ARGUMENT_BUNDLE,
                 InputArgument::REQUIRED,
-                self::ARGUMENT_DESCRIPTION_BUNDLE
+                self::ARGUMENT_DESCRIPTION_BUNDLE,
             );
     }
 

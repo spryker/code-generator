@@ -65,7 +65,7 @@ class GatewayControllerCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\Business\%sFacade',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

@@ -13,6 +13,7 @@ abstract class AbstractPhpFileCodeGenerator extends AbstractFileCodeGenerator
      * @var string
      */
     public const KEY_CLASSNAME = 'classname';
+
     /**
      * @var string
      */

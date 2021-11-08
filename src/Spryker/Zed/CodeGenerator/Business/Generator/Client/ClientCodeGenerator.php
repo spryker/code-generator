@@ -32,7 +32,7 @@ class ClientCodeGenerator extends AbstractClientCodeGenerator
     {
         return sprintf(
             '%sClient',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

@@ -65,7 +65,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ZedDependencyProviderCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -78,7 +78,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ZedBundleCodeGenerator(
             $bundle,
-            $this->getRequiredZedBundleCodeGenerators($bundle)
+            $this->getRequiredZedBundleCodeGenerators($bundle),
         );
     }
 
@@ -91,7 +91,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ZedConfigCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -104,7 +104,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new FacadeInterfaceCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -117,7 +117,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new FacadeCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -130,7 +130,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new BusinessFactoryCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -143,7 +143,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new CommunicationFactoryCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -156,7 +156,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new GatewayControllerCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -169,7 +169,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new IndexControllerCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -182,7 +182,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new IndexIndexTemplateCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -195,7 +195,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ConsoleCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -208,7 +208,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new PersistenceFactoryCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -221,7 +221,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new QueryContainerCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -234,7 +234,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new QueryContainerInterfaceCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -247,7 +247,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new SchemaXmlCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -260,7 +260,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new NavigationXmlCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -270,7 +270,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     protected function createTwigLoaderFilesystem()
     {
         return new FilesystemLoader(
-            $this->getConfig()->getTemplatePaths()
+            $this->getConfig()->getTemplatePaths(),
         );
     }
 
@@ -280,7 +280,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     protected function createTwigEnvironment()
     {
         return new Environment(
-            $this->createTwigLoaderFilesystem()
+            $this->createTwigLoaderFilesystem(),
         );
     }
 
@@ -291,14 +291,14 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         //@todo this is common between generators and should be cached!
         return new TwigGeneratorEngine(
-            $this->createTwigEnvironment()
+            $this->createTwigEnvironment(),
         );
     }
 
     /**
      * @param string $bundle
      *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[]
+     * @return array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface>
      */
     protected function getRequiredZedBundleCodeGenerators($bundle)
     {
@@ -330,14 +330,14 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new YvesBundleCodeGenerator(
             $bundle,
-            $this->getRequiredYvesBundleCodeGenerators($bundle)
+            $this->getRequiredYvesBundleCodeGenerators($bundle),
         );
     }
 
     /**
      * @param string $bundle
      *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[]
+     * @return array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface>
      */
     protected function getRequiredYvesBundleCodeGenerators($bundle)
     {
@@ -359,7 +359,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
         return new YvesControllerCodeGenerator(
             $bundle,
             $this->createTwigGeneratorEngine(),
-            $this->getConfig()->getDefaultYvesController()
+            $this->getConfig()->getDefaultYvesController(),
         );
     }
 
@@ -376,7 +376,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
             $bundle,
             $this->createTwigGeneratorEngine(),
             $this->getConfig()->getDefaultYvesController(),
-            $this->getConfig()->getProviderNameSpace($this->createGeneratorProjectTypeResolver())
+            $this->getConfig()->getProviderNameSpace($this->createGeneratorProjectTypeResolver()),
         );
     }
 
@@ -391,7 +391,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
             $bundle,
             $this->createTwigGeneratorEngine(),
             $this->getConfig()->getDefaultYvesController(),
-            $this->getConfig()->getProviderNameSpace($this->createGeneratorProjectTypeResolver())
+            $this->getConfig()->getProviderNameSpace($this->createGeneratorProjectTypeResolver()),
         );
     }
 
@@ -407,7 +407,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
             $this->createTwigGeneratorEngine(),
             $this->getConfig()->getDefaultYvesController(),
             $this->getConfig()->getDefaultYvesControllerSourceAction($this->createGeneratorProjectTypeResolver()),
-            $this->getConfig()->getDefaultYvesControllerTargetAction()
+            $this->getConfig()->getDefaultYvesControllerTargetAction(),
         );
     }
 
@@ -420,7 +420,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new YvesFactoryCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -433,14 +433,14 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new BundleCodeGenerator(
             $bundle,
-            $this->getRequiredBundleGenerators($bundle)
+            $this->getRequiredBundleGenerators($bundle),
         );
     }
 
     /**
      * @param string $bundle
      *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[]
+     * @return array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface>
      */
     protected function getRequiredBundleGenerators($bundle)
     {
@@ -462,7 +462,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ClientBundleCodeGenerator(
             $bundle,
-            $this->getRequiredClientBundleCodeGenerators($bundle)
+            $this->getRequiredClientBundleCodeGenerators($bundle),
         );
     }
 
@@ -493,7 +493,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ClientDependencyProviderCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -506,7 +506,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ClientFactoryCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -519,7 +519,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ClientCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -532,7 +532,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ClientInterfaceCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -545,7 +545,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new StubCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -558,7 +558,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new StubInterfaceCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -571,7 +571,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ServiceBundleCodeGenerator(
             $bundle,
-            $this->getRequiredServiceBundleCodeGenerators($bundle)
+            $this->getRequiredServiceBundleCodeGenerators($bundle),
         );
     }
 
@@ -584,7 +584,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new SharedBundleCodeGenerator(
             $bundle,
-            $this->getRequiredSharedBundleCodeGenerators($bundle)
+            $this->getRequiredSharedBundleCodeGenerators($bundle),
         );
     }
 
@@ -597,7 +597,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new TransferCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -622,7 +622,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ServiceCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -635,7 +635,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ServiceInterfaceCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 
@@ -648,7 +648,7 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
     {
         return new ServiceFactoryCodeGenerator(
             $bundle,
-            $this->createTwigGeneratorEngine()
+            $this->createTwigGeneratorEngine(),
         );
     }
 

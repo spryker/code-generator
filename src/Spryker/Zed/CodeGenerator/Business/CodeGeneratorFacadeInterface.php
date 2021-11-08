@@ -17,7 +17,7 @@ interface CodeGeneratorFacadeInterface
      *
      * @param string $bundle
      *
-     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
     public function generateZedBundle($bundle);
 
@@ -29,7 +29,7 @@ interface CodeGeneratorFacadeInterface
      *
      * @param string $bundle
      *
-     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
     public function generateYvesBundle($bundle);
 
@@ -41,7 +41,7 @@ interface CodeGeneratorFacadeInterface
      *
      * @param string $bundle
      *
-     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
     public function generateClientBundle($bundle);
 
@@ -53,7 +53,7 @@ interface CodeGeneratorFacadeInterface
      *
      * @param string $bundle
      *
-     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
     public function generateServiceBundle($bundle);
 
@@ -65,7 +65,7 @@ interface CodeGeneratorFacadeInterface
      *
      * @param string $bundle
      *
-     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
     public function generateSharedBundle($bundle);
 
@@ -77,7 +77,7 @@ interface CodeGeneratorFacadeInterface
      *
      * @param string $bundle
      *
-     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
     public function generateBundle($bundle);
 }

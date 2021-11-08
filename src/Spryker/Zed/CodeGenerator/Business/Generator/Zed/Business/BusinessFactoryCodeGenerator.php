@@ -37,7 +37,7 @@ class BusinessFactoryCodeGenerator extends AbstractZedCodeGenerator
     {
         return sprintf(
             '%sBusinessFactory',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -72,7 +72,7 @@ class BusinessFactoryCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\%sConfig',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -86,7 +86,7 @@ class BusinessFactoryCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\Persistence\%sQueryContainer',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

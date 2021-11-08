@@ -29,7 +29,7 @@ abstract class AbstractZedCodeGenerator extends AbstractPhpFileCodeGenerator
     {
         return sprintf(
             'Pyz\Zed\%s',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

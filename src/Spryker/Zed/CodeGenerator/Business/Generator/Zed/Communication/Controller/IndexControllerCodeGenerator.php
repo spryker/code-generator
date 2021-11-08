@@ -67,7 +67,7 @@ class IndexControllerCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\Business\%sFacade',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -81,7 +81,7 @@ class IndexControllerCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\Persistence\%sQueryContainer',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -93,7 +93,7 @@ class IndexControllerCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\Communication\%sCommunicationFactory',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

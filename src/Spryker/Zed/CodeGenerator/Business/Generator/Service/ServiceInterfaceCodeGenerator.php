@@ -32,7 +32,7 @@ class ServiceInterfaceCodeGenerator extends AbstractServiceCodeGenerator
     {
         return sprintf(
             '%sServiceInterface',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

@@ -32,7 +32,7 @@ class ClientFactoryCodeGenerator extends AbstractClientCodeGenerator
     {
         return sprintf(
             '%sFactory',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

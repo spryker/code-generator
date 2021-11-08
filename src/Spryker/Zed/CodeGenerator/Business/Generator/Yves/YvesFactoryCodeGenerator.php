@@ -35,7 +35,7 @@ class YvesFactoryCodeGenerator extends AbstractYvesCodeGenerator
     {
         return sprintf(
             '%sFactory',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

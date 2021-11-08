@@ -43,7 +43,7 @@ class FacadeInterfaceCodeGenerator extends AbstractZedCodeGenerator
     {
         return sprintf(
             '%sFacadeInterface',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 

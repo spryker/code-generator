@@ -22,6 +22,7 @@ class BundleZedCodeGeneratorConsole extends Console
      * @var string
      */
     protected const COMMAND_NAME = 'code:generate:module:zed';
+
     /**
      * @var string
      */
@@ -31,6 +32,7 @@ class BundleZedCodeGeneratorConsole extends Console
      * @var string
      */
     protected const ARGUMENT_BUNDLE = 'module';
+
     /**
      * @var string
      */
@@ -46,7 +48,7 @@ class BundleZedCodeGeneratorConsole extends Console
             ->addArgument(
                 self::ARGUMENT_BUNDLE,
                 InputArgument::REQUIRED,
-                self::ARGUMENT_BUNDLE_DESCRIPTION
+                self::ARGUMENT_BUNDLE_DESCRIPTION,
             );
     }
 

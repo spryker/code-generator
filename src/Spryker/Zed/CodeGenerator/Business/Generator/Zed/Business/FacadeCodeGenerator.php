@@ -43,7 +43,7 @@ class FacadeCodeGenerator extends AbstractZedCodeGenerator
     {
         return sprintf(
             '%sFacade',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -79,7 +79,7 @@ class FacadeCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\Business\%sBusinessFactory',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

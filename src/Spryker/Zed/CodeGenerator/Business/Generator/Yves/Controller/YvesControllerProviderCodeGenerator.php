@@ -62,7 +62,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
     {
         return sprintf(
             '%sControllerProvider',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -73,7 +73,7 @@ class YvesControllerProviderCodeGenerator extends AbstractYvesControllerCodeGene
     {
         return sprintf(
             '%s\Plugin\Provider',
-            parent::getNamespace()
+            parent::getNamespace(),
         );
     }
 

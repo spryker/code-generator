@@ -35,7 +35,7 @@ class ZedDependencyProviderCodeGenerator extends AbstractZedCodeGenerator
     {
         return sprintf(
             '%sDependencyProvider',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

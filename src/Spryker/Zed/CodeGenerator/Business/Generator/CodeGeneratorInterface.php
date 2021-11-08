@@ -13,10 +13,12 @@ interface CodeGeneratorInterface
      * @var string
      */
     public const RESULT_SUCCESS = 'success';
+
     /**
      * @var string
      */
     public const RESULT_ALREADY_EXISTS = 'already exists';
+
     /**
      * @var string
      */
@@ -28,12 +30,12 @@ interface CodeGeneratorInterface
     public function getCodeGeneratorName();
 
     /**
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[]
+     * @return array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface>
      */
     public function getRequiredGenerators();
 
     /**
-     * @return \Generated\Shared\Transfer\CodeGeneratorInteractionTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorInteractionTransfer>
      */
     public function getRequiredInteractions();
 

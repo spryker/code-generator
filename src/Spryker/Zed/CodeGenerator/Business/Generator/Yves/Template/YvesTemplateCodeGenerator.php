@@ -52,7 +52,7 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
         parent::__construct(
             $bundle,
             $generatorEngine,
-            $requiredGenerators
+            $requiredGenerators,
         );
 
         $this->controller = $controller;
@@ -88,7 +88,7 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
         return sprintf(
             'Yves/Theme/default/%s/%s.twig.twig',
             $this->getController(),
-            $this->getSourceAction()
+            $this->getSourceAction(),
         );
     }
 
@@ -102,7 +102,7 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
             sprintf(
                 'Theme/default/%s/%s.twig',
                 $this->getController(),
-                $this->getTargetAction()
+                $this->getTargetAction(),
             ),
         ]);
     }
@@ -123,7 +123,7 @@ class YvesTemplateCodeGenerator extends AbstractYvesCodeGenerator
         return sprintf(
             'Yves%s%sCodeGeneator',
             ucfirst($this->getController()),
-            ucfirst($this->getTargetAction())
+            ucfirst($this->getTargetAction()),
         );
     }
 

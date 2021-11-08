@@ -26,7 +26,7 @@ abstract class AbstractServiceCodeGenerator extends AbstractPhpFileCodeGenerator
     {
         return sprintf(
             'Pyz\Service\%s',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

@@ -25,7 +25,7 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
     /**
      * @param string $bundle
      * @param \Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface $generatorEngine
-     * @param \Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface[] $requiredGenerators
+     * @param array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface> $requiredGenerators
      */
     public function __construct($bundle, GeneratorEngineInterface $generatorEngine, array $requiredGenerators = [])
     {
@@ -65,7 +65,7 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
 
         $content = $this->generatorEngine->generate(
             $this->getSourceFile(),
-            $this->getVars()
+            $this->getVars(),
         );
 
         $result = file_put_contents($absoluteTargteFile, $content);
@@ -116,7 +116,7 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
         return mkdir(
             $directory,
             self::FILE_PERMISSIONS,
-            true
+            true,
         );
     }
 
@@ -129,7 +129,7 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
     {
         return implode(
             DIRECTORY_SEPARATOR,
-            $fragments
+            $fragments,
         );
     }
 
@@ -145,7 +145,7 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
     }
 
     /**
-     * @return \Generated\Shared\Transfer\CodeGeneratorInteractionTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorInteractionTransfer>
      */
     public function getRequiredInteractions()
     {

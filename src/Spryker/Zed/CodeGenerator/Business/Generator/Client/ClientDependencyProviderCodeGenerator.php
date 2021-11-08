@@ -32,7 +32,7 @@ class ClientDependencyProviderCodeGenerator extends AbstractClientCodeGenerator
     {
         return sprintf(
             '%sDependencyProvider',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

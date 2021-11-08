@@ -17,6 +17,7 @@ class NavigationXmlCodeGenerator extends AbstractZedCodeGenerator
      * @var string
      */
     public const KEY_BUNDLE_DASHED = 'bundleDashed';
+
     /**
      * @var string
      */

@@ -29,7 +29,7 @@ abstract class AbstractYvesCodeGenerator extends AbstractPhpFileCodeGenerator
     {
         return sprintf(
             'Pyz\Yves\%s',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

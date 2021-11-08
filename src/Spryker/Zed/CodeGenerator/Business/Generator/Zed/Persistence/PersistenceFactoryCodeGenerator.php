@@ -34,7 +34,7 @@ class PersistenceFactoryCodeGenerator extends AbstractZedCodeGenerator
     {
         return sprintf(
             '%sPersistenceFactory',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -69,7 +69,7 @@ class PersistenceFactoryCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\%sConfig',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -83,7 +83,7 @@ class PersistenceFactoryCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\Persistence\%sQueryContainer',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

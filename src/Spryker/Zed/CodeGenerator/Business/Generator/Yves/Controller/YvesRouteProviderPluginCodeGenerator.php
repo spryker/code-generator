@@ -59,7 +59,7 @@ class YvesRouteProviderPluginCodeGenerator extends AbstractYvesControllerCodeGen
     {
         return sprintf(
             '%sRouteProviderPlugin',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -70,7 +70,7 @@ class YvesRouteProviderPluginCodeGenerator extends AbstractYvesControllerCodeGen
     {
         return sprintf(
             '%s\Plugin\Router',
-            parent::getNamespace()
+            parent::getNamespace(),
         );
     }
 

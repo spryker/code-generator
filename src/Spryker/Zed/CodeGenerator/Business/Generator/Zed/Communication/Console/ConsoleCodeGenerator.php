@@ -34,7 +34,7 @@ class ConsoleCodeGenerator extends AbstractZedCodeGenerator
     {
         return sprintf(
             '%sConsole',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 
@@ -68,7 +68,7 @@ class ConsoleCodeGenerator extends AbstractZedCodeGenerator
         return sprintf(
             '\%s\Business\%sFacade',
             parent::getNamespace(),
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

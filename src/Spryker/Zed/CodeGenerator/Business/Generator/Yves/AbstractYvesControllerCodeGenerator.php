@@ -32,7 +32,7 @@ abstract class AbstractYvesControllerCodeGenerator extends AbstractYvesCodeGener
         parent::__construct(
             $bundle,
             $generatorEngine,
-            $requiredGenerators
+            $requiredGenerators,
         );
 
         $this->controller = $controller;

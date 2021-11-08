@@ -26,7 +26,7 @@ abstract class AbstractSharedCodeGenerator extends AbstractPhpFileCodeGenerator
     {
         return sprintf(
             'Pyz\Shared\%s',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

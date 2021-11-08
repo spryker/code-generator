@@ -35,7 +35,7 @@ class ZedConfigCodeGenerator extends AbstractZedCodeGenerator
     {
         return sprintf(
             '%sConfig',
-            $this->getBundle()
+            $this->getBundle(),
         );
     }
 }

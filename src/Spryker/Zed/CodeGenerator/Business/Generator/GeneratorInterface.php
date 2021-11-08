@@ -13,10 +13,12 @@ interface GeneratorInterface
      * @var string
      */
     public const RESULT_SUCCESS = 'success';
+
     /**
      * @var string
      */
     public const RESULT_ALREADY_EXISTS = 'already exists';
+
     /**
      * @var string
      */
@@ -27,7 +29,7 @@ interface GeneratorInterface
      * @param string $bundle
      * @param string $namespace
      *
-     * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer[]
+     * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
     public function generate($level, $bundle, $namespace);
 }
