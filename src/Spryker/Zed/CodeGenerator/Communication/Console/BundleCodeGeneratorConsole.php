@@ -51,9 +51,9 @@ class BundleCodeGeneratorConsole extends Console
         $this->setName(static::COMMAND_NAME)
             ->setDescription(static::DESCRIPTION)
             ->addArgument(
-                self::ARGUMENT_BUNDLE,
+                static::ARGUMENT_BUNDLE,
                 InputArgument::REQUIRED,
-                self::ARGUMENT_DESCRIPTION_BUNDLE,
+                static::ARGUMENT_DESCRIPTION_BUNDLE,
             );
     }
 
@@ -65,7 +65,7 @@ class BundleCodeGeneratorConsole extends Console
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $bundle = $input->getArgument(self::ARGUMENT_BUNDLE);
+        $bundle = $input->getArgument(static::ARGUMENT_BUNDLE);
 
         $codeGeneratorResultTransfers = $this->getFacade()
             ->generateBundle($bundle);
