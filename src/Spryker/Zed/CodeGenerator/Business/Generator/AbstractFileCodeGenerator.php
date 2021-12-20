@@ -85,7 +85,7 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
     protected function getVars()
     {
         return [
-            self::KEY_BUNDLE => $this->getBundle(),
+            static::KEY_BUNDLE => $this->getBundle(),
         ];
     }
 
@@ -115,7 +115,7 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
     {
         return mkdir(
             $directory,
-            self::FILE_PERMISSIONS,
+            static::FILE_PERMISSIONS,
             true,
         );
     }

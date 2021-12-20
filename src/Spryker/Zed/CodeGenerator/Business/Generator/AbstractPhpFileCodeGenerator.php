@@ -40,8 +40,8 @@ abstract class AbstractPhpFileCodeGenerator extends AbstractFileCodeGenerator
     protected function getVars()
     {
         $vars = [
-            self::KEY_CLASSNAME => $this->getClassname(),
-            self::KEY_NAMESPACE => $this->getNamespace(),
+            static::KEY_CLASSNAME => $this->getClassname(),
+            static::KEY_NAMESPACE => $this->getNamespace(),
         ] + parent::getVars();
 
         return $vars;
