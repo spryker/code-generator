@@ -6,6 +6,8 @@
 
 Generate your Spryker project code.
 
+**DEPRECATED - This module is not continued at this point.**
+
 ## Installation
 
 This is a development only "require-dev" module:
