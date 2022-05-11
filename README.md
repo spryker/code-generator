@@ -7,6 +7,7 @@
 Generate your Spryker project code.
 
 **DEPRECATED - This module is not continued at this point.**
+Please use [Spryk](https://github.com/spryker-sdk/spryk) module and Spryks instead.
 
 ## Installation
 
