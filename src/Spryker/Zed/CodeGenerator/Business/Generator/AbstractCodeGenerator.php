@@ -115,6 +115,21 @@ abstract class AbstractCodeGenerator implements CodeGeneratorInterface
     }
 
     /**
+     * @param array $config
+     * @return self
+     */
+    public function configure(array $config = []): self
+    {
+        foreach ($config as $method => $args) {
+            if (method_exists($this, $method)) {
+                $this->$method(...$args);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
      * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
     public function generate()

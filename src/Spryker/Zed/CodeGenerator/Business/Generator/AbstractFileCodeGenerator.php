@@ -23,6 +23,11 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
     protected $generatorEngine;
 
     /**
+     * @var string
+     */
+    protected string $absolutePath;
+
+    /**
      * @param string $bundle
      * @param \Spryker\Zed\CodeGenerator\Business\Engine\GeneratorEngineInterface $generatorEngine
      * @param array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface> $requiredGenerators
@@ -32,6 +37,7 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
         parent::__construct($bundle, $requiredGenerators);
 
         $this->generatorEngine = $generatorEngine;
+        $this->absolutePath = APPLICATION_ROOT_DIR;
     }
 
     /**
@@ -40,15 +46,29 @@ abstract class AbstractFileCodeGenerator extends AbstractCodeGenerator
     protected function getAbsolutePathToBundle()
     {
         return $this->joinPath([
-            APPLICATION_ROOT_DIR,
+            $this->absolutePath,
             $this->getPathToBundle(),
+        ]);
+    }
+
+    /**
+     * @param string $vendorName
+     * @return void
+     */
+    protected function configureAbsolutePathAsVendor(string $vendorName)
+    {
+        $this->absolutePath = $this->joinPath([
+            APPLICATION_ROOT_DIR,
+            'vendor',
+            $vendorName,
+            $this->getBundle()
         ]);
     }
 
     /**
      * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer
      */
-    public function doGenerate()
+    public function doGenerate(array $config = [])
     {
         $targetFile = $this->getTargetFile();
         $absoluteTargteFile = $this->getAbsolutePathToTargetFile();

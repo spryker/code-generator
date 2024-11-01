@@ -56,212 +56,35 @@ use Twig\Loader\FilesystemLoader;
  */
 class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\ZedDependencyProviderCodeGenerator
-     */
-    public function createZedDependencyProviderCodeGenerator($bundle)
-    {
-        return new ZedDependencyProviderCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
+
 
     /**
      * @param string $bundle
      *
      * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\ZedBundleCodeGenerator
      */
-    public function createZedBundleCodeGenerator($bundle)
+    public function createZedBundleCodeGenerator($bundle, $config = [])
     {
-        return new ZedBundleCodeGenerator(
+        return (new ZedBundleCodeGenerator(
             $bundle,
-            $this->getRequiredZedBundleCodeGenerators($bundle),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\ZedConfigCodeGenerator
-     */
-    public function createZedConfigCodeGenerator($bundle)
-    {
-        return new ZedConfigCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Business\FacadeInterfaceCodeGenerator
-     */
-    public function createFacadeInterfaceCodeGenerator($bundle)
-    {
-        return new FacadeInterfaceCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Business\FacadeCodeGenerator
-     */
-    public function createFacadeCodeGenerator($bundle)
-    {
-        return new FacadeCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Business\BusinessFactoryCodeGenerator
-     */
-    public function createBusinessFactoryCodeGenerator($bundle)
-    {
-        return new BusinessFactoryCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Communication\CommunicationFactoryCodeGenerator
-     */
-    public function createCommunicationFactoryCodeGenerator($bundle)
-    {
-        return new CommunicationFactoryCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Communication\Controller\GatewayControllerCodeGenerator
-     */
-    public function createGatewayControllerCodeGenerator($bundle)
-    {
-        return new GatewayControllerCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Communication\Controller\IndexControllerCodeGenerator
-     */
-    public function createIndexControllerCodeGenerator($bundle)
-    {
-        return new IndexControllerCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Presentation\IndexIndexTemplateCodeGenerator
-     */
-    public function createIndexIndexTemplateCodeGenerator($bundle)
-    {
-        return new IndexIndexTemplateCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Communication\Console\ConsoleCodeGenerator
-     */
-    public function createConsoleCodeGenerator($bundle)
-    {
-        return new ConsoleCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Persistence\PersistenceFactoryCodeGenerator
-     */
-    public function createPersistenceFactoryCodeGenerator($bundle)
-    {
-        return new PersistenceFactoryCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Persistence\QueryContainerCodeGenerator
-     */
-    public function createQueryContainerCodeGenerator($bundle)
-    {
-        return new QueryContainerCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Persistence\QueryContainerInterfaceCodeGenerator
-     */
-    public function createQueryContainerInterfaceCodeGenerator($bundle)
-    {
-        return new QueryContainerInterfaceCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Persistence\Propel\Schema\SchemaXmlCodeGenerator
-     */
-    public function createSchemaXmlCodeGenerator($bundle)
-    {
-        return new SchemaXmlCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return \Spryker\Zed\CodeGenerator\Business\Generator\Zed\Communication\NavigationXmlCodeGenerator
-     */
-    public function createNavigationXmlCodeGenerator($bundle)
-    {
-        return new NavigationXmlCodeGenerator(
-            $bundle,
-            $this->createTwigGeneratorEngine(),
-        );
+            [
+                (new ZedDependencyProviderCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new ZedConfigCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new FacadeInterfaceCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new FacadeCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new BusinessFactoryCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new CommunicationFactoryCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new GatewayControllerCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new IndexControllerCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new IndexIndexTemplateCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new ConsoleCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new PersistenceFactoryCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new QueryContainerCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new QueryContainerInterfaceCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new SchemaXmlCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+                (new NavigationXmlCodeGenerator($bundle, $this->createTwigGeneratorEngine()))->configure($config),
+            ],
+        ))->configure($config);
     }
 
     /**
@@ -293,32 +116,6 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
         return new TwigGeneratorEngine(
             $this->createTwigEnvironment(),
         );
-    }
-
-    /**
-     * @param string $bundle
-     *
-     * @return array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface>
-     */
-    protected function getRequiredZedBundleCodeGenerators($bundle)
-    {
-        return [
-            $this->createZedDependencyProviderCodeGenerator($bundle),
-            $this->createZedConfigCodeGenerator($bundle),
-            $this->createFacadeInterfaceCodeGenerator($bundle),
-            $this->createFacadeCodeGenerator($bundle),
-            $this->createBusinessFactoryCodeGenerator($bundle),
-            $this->createCommunicationFactoryCodeGenerator($bundle),
-            $this->createGatewayControllerCodeGenerator($bundle),
-            $this->createIndexControllerCodeGenerator($bundle),
-            $this->createIndexIndexTemplateCodeGenerator($bundle),
-            $this->createConsoleCodeGenerator($bundle),
-            $this->createPersistenceFactoryCodeGenerator($bundle),
-            $this->createQueryContainerCodeGenerator($bundle),
-            $this->createQueryContainerInterfaceCodeGenerator($bundle),
-            $this->createSchemaXmlCodeGenerator($bundle),
-            $this->createNavigationXmlCodeGenerator($bundle),
-        ];
     }
 
     /**
@@ -442,10 +239,10 @@ class CodeGeneratorBusinessFactory extends AbstractBusinessFactory
      *
      * @return array<\Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface>
      */
-    protected function getRequiredBundleGenerators($bundle)
+    protected function getRequiredBundleGenerators($bundle, $config = [])
     {
         return [
-            $this->createZedBundleCodeGenerator($bundle),
+            $this->createZedBundleCodeGenerator($bundle, $config),
             $this->createYvesBundleCodeGenerator($bundle),
             $this->createClientBundleCodeGenerator($bundle),
             $this->createServiceBundleCodeGenerator($bundle),

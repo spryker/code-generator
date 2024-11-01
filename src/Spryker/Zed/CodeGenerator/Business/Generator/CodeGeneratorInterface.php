@@ -43,4 +43,11 @@ interface CodeGeneratorInterface
      * @return \Generated\Shared\Transfer\CodeGeneratorResultTransfer
      */
     public function doGenerate();
+
+    /**
+     * @param array $config
+     *
+     * @return void
+     */
+    public function configure(array $config = []): self;
 }

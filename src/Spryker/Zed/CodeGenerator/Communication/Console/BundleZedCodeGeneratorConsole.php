@@ -11,10 +11,12 @@ use Spryker\Zed\CodeGenerator\Business\Generator\CodeGeneratorInterface;
 use Spryker\Zed\Kernel\Communication\Console\Console;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * @method \Spryker\Zed\CodeGenerator\Business\CodeGeneratorFacadeInterface getFacade()
+ * @method \Spryker\Zed\CodeGenerator\Communication\CodeGeneratorCommunicationFactory getFactory()
  */
 class BundleZedCodeGeneratorConsole extends Console
 {
@@ -38,6 +40,9 @@ class BundleZedCodeGeneratorConsole extends Console
      */
     protected const ARGUMENT_BUNDLE_DESCRIPTION = 'Name of the module';
 
+    protected const OPTION_VENDOR_NAME= 'vendor-name';
+    protected const OPTION_VENDOR_NAME_DESCRIPTION = 'Build a standalone module in the vendor directory. Suits the most for contributions and product development.';
+
     /**
      * @return void
      */
@@ -48,7 +53,13 @@ class BundleZedCodeGeneratorConsole extends Console
             ->addArgument(
                 static::ARGUMENT_BUNDLE,
                 InputArgument::REQUIRED,
-                static::ARGUMENT_BUNDLE_DESCRIPTION,
+                static::ARGUMENT_BUNDLE_DESCRIPTION
+            )
+            ->addOption(
+                self::OPTION_VENDOR_NAME,
+                null,
+                InputOption::VALUE_OPTIONAL,
+                self::OPTION_VENDOR_NAME_DESCRIPTION
             );
     }
 
@@ -61,9 +72,14 @@ class BundleZedCodeGeneratorConsole extends Console
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $bundle = $input->getArgument(static::ARGUMENT_BUNDLE);
+        $vendorName = $input->getOption(static::OPTION_VENDOR_NAME);
+
+        $config = [
+            'configureAbsolutePathAsVendor' => [$vendorName]
+        ];
 
         $codeGeneratorResultTransfers = $this->getFacade()
-            ->generateZedBundle($bundle);
+            ->generateZedBundle($bundle, $config);
 
         $messenger = $this->getMessenger();
 

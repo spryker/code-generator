@@ -23,10 +23,10 @@ class CodeGeneratorFacade extends AbstractFacade implements CodeGeneratorFacadeI
      *
      * @return array<\Generated\Shared\Transfer\CodeGeneratorResultTransfer>
      */
-    public function generateZedBundle($bundle)
+    public function generateZedBundle($bundle, $config = [])
     {
         return $this->getFactory()
-            ->createZedBundleCodeGenerator($bundle)
+            ->createZedBundleCodeGenerator($bundle, $config)
             ->generate();
     }
 
